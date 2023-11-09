@@ -102,3 +102,12 @@ export const getTestimonials = async ():Promise<TestimonialI[]>=>{
   const resp = await api.get('/testimonials')
   return resp.data.data
 }
+
+
+
+
+export const joinNewsLetterApi = async ({email}:{email:string})=>{
+  const form = new FormData()
+  form.append('email',email)
+  const resp = await api.post('/subscribe',form)
+}

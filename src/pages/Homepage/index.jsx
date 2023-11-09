@@ -1,3 +1,4 @@
+import NewsLetter from "../../components/NewsLetter"
 import SectionFive from "./sections/SectionFive"
 import SectionFour from "./sections/SectionFour"
 import SectionOne from "./sections/SectionOne"
@@ -14,6 +15,7 @@ const Homepage = () => {
       <SectionFour />
       <SectionFive />
       <SectionSix />
+      <NewsLetter />
     </div>
   )
 }
