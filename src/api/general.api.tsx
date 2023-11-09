@@ -67,3 +67,22 @@ export const getKeyFeatureApi = async():Promise<KeyFeature[]>=>{
   const resp = await api.get(`/features`)
   return resp.data.data
 }
+
+
+export type Pricing ={
+  "name": string,
+  "monthly_price": string,
+  "monthly_price_discount":string,
+  "yearly_price": string,
+  "yearly_price_discount": string,
+  "features": {
+      "field1": string,
+      "field2": number,
+      "field3": string
+  }
+}
+export const getPricing = async ():Promise<Pricing[]>=>{
+
+    const resp = await api.get('/plans')
+    return resp.data.data
+}
