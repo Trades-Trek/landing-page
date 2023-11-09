@@ -39,6 +39,11 @@ const Navbar = () => {
               </a>
             </li>
             <li>
+              <Link to="/wait-list" className="text-lg font-light text-black">
+               Join Waitlist
+              </Link>
+            </li>
+            <li>
               <Link to="/contact" className="text-lg font-light text-black">
                 Contact Us
               </Link>

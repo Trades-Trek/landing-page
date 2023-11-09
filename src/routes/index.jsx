@@ -8,6 +8,7 @@ import Faq from "../pages/FAQ"
 import TermsConditions from "../pages/Terms"
 import PrivacyPolicy from "../pages/Privacy"
 import { useEffect } from "react"
+import JoinWaitList from "../pages/JoinWaitList/JoinWaitList"
 
 const PageRoutes = () => {
   const pathname = useLocation().pathname;
@@ -28,6 +29,7 @@ const PageRoutes = () => {
           <Route path="/faq" element={<Faq />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/wait-list" element={<JoinWaitList />} />
         </Routes>
       </div>
       <div className="w-full" >
