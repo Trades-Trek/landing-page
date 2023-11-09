@@ -2,32 +2,14 @@ import Illustrate6 from "../../../assets/Images/Home/Illustrate6.png";
 import Illustrate5 from "../../../assets/Images/Home/Illustrate5.png";
 import Illustrate4 from "../../../assets/Images/Home/Illustrate4.png";
 import Illustrate3 from "../../../assets/Images/Home/Illustrate3.png";
-
-const features = [
-  {
-    title: "Build a Portfolio",
-    content: `Build and manage a diversified portfolio of investments with Trades Trek.`,
-    image: Illustrate6,
-  },
-  {
-    title: "Trade with Advanced Tools",
-    content: `Trade smarter with our platform's real-time market data and analysis. We offer expert tools and resources for active traders looking to make informed investment decisions.`,
-    image: Illustrate5,
-  },
-  {
-    title: "Compete with the Best Traders",
-    content: `Beat the competition with our investment simulation tools and win prizes.`,
-    image: Illustrate4,
-  },
-  {
-    title: "Learn",
-    content: `Learn more about investing and personal finance through our educational resources and tutorials. Get expert insights to maximize your investment returns.`,
-    image: Illustrate3,
-  },
-  
-];
+import { useQuery } from "react-query";
+import { getKeyFeatureApi } from "../../../api/general.api";
+import Loader from "../../../components/Loader";
 
 const SectionTwo = () => {
+  const { isLoading,data:features} =useQuery('getKeyFeatureApi',getKeyFeatureApi,{
+    'refetchOnWindowFocus':false
+  })
   return (
     <div className="max-w-[1200px] mx-auto">
       <div className="pt-[110px]">
@@ -36,12 +18,20 @@ const SectionTwo = () => {
             <h2 className="text-2xl md:text-[32px] font-bold pb-3">
               Key Features
             </h2>
+       
             <div className="absolute bottom-0 w-[83px] h-[9px] bg-palette-two left-0 rounded-[40px]"></div>
           </div>
+       
         </div>
+       <div style={{'textAlign':'center'}}>
+       {
+        isLoading&&<Loader/>
+      }
+       </div>
       </div>
+
       <ul className="px-3 overflow-x-hidden list-none md:p-0">
-        {features.map((feature, id) => (
+        {features?.map((feature, id) => (
           <li
             className={`flex flex-col justify-center gap-x-[52px] items-center ${
               id === 1 || id === 3 ? "md:flex-row-reverse" : "md:flex-row"

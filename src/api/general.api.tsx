@@ -53,3 +53,17 @@ export const getFaqApi = async ({query=''}:{query?:string}):Promise<FaqI[]>=>{
   const resp = await api.get(`faq${query}`)
   return resp.data.data
 }
+
+
+type KeyFeature ={
+  title:string,
+  description:string,
+  image:string
+}
+
+export const getKeyFeatureApi = async():Promise<KeyFeature[]>=>{
+  
+
+  const resp = await api.get(`/features`)
+  return resp.data.data
+}
