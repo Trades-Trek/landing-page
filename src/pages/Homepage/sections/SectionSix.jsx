@@ -1,21 +1,23 @@
 import { useState } from "react";
 import { BsPlusCircle, BsDashCircle } from "react-icons/bs";
+import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
+import { getFaqApi } from "../../../api/general.api";
 
-const faqs = [
-  {
-    question: "How do I sign up for Trades Trek?",
-    answer: `Signing up is easy! Simply click the Sign Up button on our homepage and follow the instructions`,
-  },
-  {
-    question: "What kind of support is available?",
-    answer: `Our team of experts are always available to provide you with exceptional customer support via phone, email or live chat.`,
-  },
-  {
-    question: "What kind of investment can I make?",
-    answer: `This is completely up to you. We provide you guide and tools to understand the financial market.`,
-  },
-];
+// const faqs = [
+//   {
+//     question: "How do I sign up for Trades Trek?",
+//     answer: `Signing up is easy! Simply click the Sign Up button on our homepage and follow the instructions`,
+//   },
+//   {
+//     question: "What kind of support is available?",
+//     answer: `Our team of experts are always available to provide you with exceptional customer support via phone, email or live chat.`,
+//   },
+//   {
+//     question: "What kind of investment can I make?",
+//     answer: `This is completely up to you. We provide you guide and tools to understand the financial market.`,
+//   },
+// ];
 
 const SectionSix = () => {
   const navigate = useNavigate();
@@ -27,6 +29,7 @@ const SectionSix = () => {
       setSelectedFaq(id);
     }
   };
+  const {isLoading,data:faqs,status} = useQuery(['getFaqApi'],()=>getFaqApi({'query':''}),)
   return (
     <div className="faqPage pt-[77px] pb-[75px] px-2 md:px-0" id="faq">
       <div className="pt-[52px]">
@@ -40,7 +43,7 @@ const SectionSix = () => {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center gap-y-4">
-        {faqs.map((faq, id) => (
+        {faqs?.map((faq, id) => (
           <div
             key={id}
             onClick={() => handleSelect(id)}
@@ -70,7 +73,7 @@ const SectionSix = () => {
               <p className="pb-4 text-sm md:text-xl">{faq.answer}</p>
             </div>
           </div>
-        ))}
+        )).slice(0,3)}
       </div>
       <div className="flex justify-center mt-[33px]">
         <button onClick={()=>navigate("/faq")} className="text-white font-bold border-none h-14 px-8 rounded-[15px] bg-palette-two">

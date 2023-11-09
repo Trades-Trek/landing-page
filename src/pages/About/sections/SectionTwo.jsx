@@ -1,12 +1,13 @@
 import { useQuery } from "react-query";
 import Illustrate1 from "../../../assets/Images/About/Illustrate1.png";
 import Illustrate2 from "../../../assets/Images/About/Illustrate2.png";
-import { getCompanyInfoApi } from "../../../api/general.api";
+import { getAboutUs, getCompanyInfoApi } from "../../../api/general.api";
 import Loader, { BigLoader } from "../../../components/Loader";
 
 const SectionTwo = () => {
 
   const {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,{cacheTime:10000 * 600 * 50})
+  // getAboutUs
   return (
      <div>
     <div className=" pt-[84px] pb-32 w-full">

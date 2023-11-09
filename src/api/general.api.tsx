@@ -17,7 +17,7 @@ export const GenegralResponseAndError = {
         handlError(err)
       }
 }
-
+export const cachedTime = {cacheTime:10000 * 600 * 50}
 export const communitySignUpApi = async(data:WaitListI):Promise<SuccessResponse>=>{
     const form = new FormData()
     form.append('first_name',data.first_name)
@@ -140,4 +140,18 @@ export const getCompanyInfoApi = async ():Promise<CompanyInfoI>=>{
 
   const resp = await api.get('/company-information',)
   return resp.data.data
+}
+
+//get pages content
+type AboutUsI ={
+  title:string,
+  subtitle:string,
+  content:string,
+  images:{
+    banner:string
+  },
+}
+export const getAboutUs = async():Promise<AboutUsI>=>{
+  const resp = await api.get('/page/about-us',)
+  return resp.data.data 
 }
