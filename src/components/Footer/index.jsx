@@ -4,8 +4,12 @@ import Playstore from "../../assets/Images/playstore.png";
 import Logo from "../../assets/Images/Footer/LogoWhite.png";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { getCompanyInfoApi } from "../../api/general.api";
+import { useQuery } from "react-query";
 
 const Footer = () => {
+  const {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,{cacheTime:10000 * 600 * 50})
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center gap-y-7 md:flex-row bg-palette-one gap-x-14">
@@ -18,11 +22,14 @@ const Footer = () => {
             Today!
           </p>
           <div className="flex flex-col items-center md:flex-row gap-y-4 gap-x-3">
-            <a href="https://apps.apple.com/ng/app/trades-trek/id6451382635" target="_blank" rel="noreferrer">
+            <a 
+                          href={data?.ios_download_url}
+            // href="https://apps.apple.com/ng/app/trades-trek/id6451382635"
+             target="_blank" rel="noreferrer">
               <img src={Appstore} alt="appstore" />
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id=com.tradestrek.tradestrek"
+              href={data?.android_download_url}
               target="_blank"
               rel="noreferrer"
             >
@@ -110,30 +117,37 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-x-4">
               <a
-                href="https://web.facebook.com/TradesTrek/"
+                // href="https://web.facebook.com/TradesTrek/"
+                href={data.facebook_url}
                 target="_blank"
                 rel="noreferrer"
               >
                 <FaFacebook className="text-xl text-white" />
               </a>
               <a
-                href="https://twitter.com/TradesTrek"
+                // href="https://twitter.com/TradesTrek"
+                href={data.twitter_url}
+
                 target="_blank"
                 rel="noreferrer"
               >
                 <FaTwitter className="text-xl text-white" />
               </a>
               <a
-                href="https://www.instagram.com/tradestrek/"
+                // href="https://www.instagram.com/tradestrek/"
+                href={data.instagram_url}
+
                 target="_blank"
                 rel="noreferrer"
               >
                 <FaInstagram className="text-xl text-white" />
               </a>
               <a
-                href="https://www.linkedin.com/company/trades-trek/"
+                // href="https://www.linkedin.com/company/trades-trek/"
                 target="_blank"
                 rel="noreferrer"
+                href={data.linkedin_url}
+
               >
                 <FaLinkedin className="text-xl text-white" />
               </a>

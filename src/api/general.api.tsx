@@ -110,4 +110,34 @@ export const joinNewsLetterApi = async ({email}:{email:string})=>{
   const form = new FormData()
   form.append('email',email)
   const resp = await api.post('/subscribe',form)
+  return resp.data
+}
+
+type CompanyInfoI = {
+  "support_email": string,
+  "contact_email": string,
+  "address_ln1": string,
+  "address_ln2": string,
+  "city": string,
+  "state": string,
+  "country": string,
+  "phone": null|string|number,
+  "ios_download_url":string,
+  "android_download_url": string,
+  "dynamic_link": string,
+  "facebook_url": string,
+  "twitter_url": string,
+  "instagram_url": string,
+  "linkedin_url": string,
+  "pinterest_url": string,
+  "threads_url": string,
+  "site_description": string,
+  "mission_statement": string,
+  "vision_statement": string
+}
+export const getCompanyInfoApi = async ():Promise<CompanyInfoI>=>{
+
+
+  const resp = await api.get('/company-information',)
+  return resp.data.data
 }
