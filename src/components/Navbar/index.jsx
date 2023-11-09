@@ -39,8 +39,8 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <Link to="/wait-list" className="text-lg font-light text-black">
-               Join Waitlist
+              <Link to="/join-community" className="text-lg font-light text-black">
+               Join Community
               </Link>
             </li>
             <li>

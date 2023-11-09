@@ -29,7 +29,7 @@ const PageRoutes = () => {
           <Route path="/faq" element={<Faq />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/wait-list" element={<JoinWaitList />} />
+          <Route path="/join-community" element={<JoinWaitList />} />
         </Routes>
       </div>
       <div className="w-full" >

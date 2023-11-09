@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import { toast } from "react-toastify";
 // @ts-ignore
 import Illustrate1 from '../../assets/Images/waitchair.jpg'
 // import Illustrate1 from "../../assets/Images/Contact/Illustrate1.png";
@@ -9,27 +8,41 @@ import InputWithLabel from "../../components/InputWithLabel";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { useMutation } from "react-query";
+import { communitySignUpApi } from "../../api/general.api";
+import { handlError } from "../../utils/extraFunc";
+import toast from "react-hot-toast"
 
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 const schema = yup.object({
     'first_name':yup.string().required(),
     'last_name':yup.string().required(),
-    'birth_year':yup.number().required(),
+    'birth_year':yup.number().min(1900).max(2023).typeError('Year must be a number').required('Year must be number'),
     'email':yup.string().email().required(),
-    'phone_number':yup.string().matches(phoneRegExp, 'Phone number is not valid'),
+    'phone_number':yup.string().matches(phoneRegExp, 'Phone number is not valid').required(),
 })
+
+
 export type WaitListI =yup.InferType<typeof schema>
 
 const JoinWaitList =()=>{
-    const loading =false
-
+    const {mutate ,isLoading:loading} = useMutation(communitySignUpApi,{
+      'onSuccess':(data)=>{
+        toast.success(data.message)
+      },
+      'onError':(err:any)=>{
+        handlError(err)
+      }
+    })
     const { register, handleSubmit, setValue,formState: { errors } } = useForm<WaitListI>({
         resolver: yupResolver(schema)
       });
-
+    
     const onSubmit = (data:WaitListI)=>{
         console.log(data)
+
+        mutate(data)
     }
 
     return (
@@ -41,7 +54,7 @@ const JoinWaitList =()=>{
           <form
                     onSubmit={handleSubmit(onSubmit)}
           className="pt-5 md:w-1/2">
-            <p className="mb-2 text-[32px] font-bold">Join Waiting List</p>
+            <p className="mb-2 text-[32px] font-bold">Join Community</p>
             <p className="mb-8 font-medium text-[#4E4B66]">
              Thanks for beign a part of the journey
             </p>
@@ -59,7 +72,7 @@ const JoinWaitList =()=>{
                 />
                 <InputWithLabel 
                 register={register('birth_year')}
-                errorMessage={errors.birth_year?.message??'Birth year must be a number Number must be'}
+                errorMessage={errors.birth_year?.message}
                 label="Year of birth"
                 />
                 <InputWithLabel 
