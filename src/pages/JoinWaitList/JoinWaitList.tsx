@@ -9,12 +9,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useMutation } from "react-query";
-import { communitySignUpApi } from "../../api/general.api";
+import { GenegralResponseAndError, communitySignUpApi } from "../../api/general.api";
 import { handlError } from "../../utils/extraFunc";
 import toast from "react-hot-toast"
 
 
-const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+export const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 const schema = yup.object({
     'first_name':yup.string().required(),
     'last_name':yup.string().required(),
@@ -27,14 +27,7 @@ const schema = yup.object({
 export type WaitListI =yup.InferType<typeof schema>
 
 const JoinWaitList =()=>{
-    const {mutate ,isLoading:loading} = useMutation(communitySignUpApi,{
-      'onSuccess':(data)=>{
-        toast.success(data.message)
-      },
-      'onError':(err:any)=>{
-        handlError(err)
-      }
-    })
+    const {mutate ,isLoading:loading} = useMutation(communitySignUpApi,GenegralResponseAndError)
     const { register, handleSubmit, setValue,formState: { errors } } = useForm<WaitListI>({
         resolver: yupResolver(schema)
       });
