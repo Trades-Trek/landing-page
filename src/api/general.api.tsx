@@ -40,3 +40,16 @@ export const submitContactApi = async (data:ContactI)=>{
   const resp = await api.post('/contact',form)
   return resp.data
 }
+
+export type FaqI = {
+  subject:string,
+  question:string,
+  answer:string
+
+}
+export const getFaqApi = async ({query=''}:{query?:string}):Promise<FaqI[]>=>{
+  // let query = 
+
+  const resp = await api.get(`faq${query}`)
+  return resp.data.data
+}
