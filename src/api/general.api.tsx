@@ -86,3 +86,19 @@ export const getPricing = async ():Promise<Pricing[]>=>{
     const resp = await api.get('/plans')
     return resp.data.data
 }
+
+export type TestimonialI = {
+  "first_name": string,
+  "last_name": string,
+  "occupation":string,
+  "company_name": string,
+  "position": string,
+  "rating": string,
+  "review": string,
+  "image": string
+}
+export const getTestimonials = async ():Promise<TestimonialI[]>=>{
+
+  const resp = await api.get('/testimonials')
+  return resp.data.data
+}

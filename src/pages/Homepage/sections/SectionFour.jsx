@@ -178,7 +178,7 @@ const SectionFour = () => {
           ))}
  */}
   {
-    pricing.map((price,index)=>(
+    pricing?.map((price,index)=>(
       <div
       className="w-full bg-white px-[25px] pt-[25px] pb-14 rounded-lg"
       >
