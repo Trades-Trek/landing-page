@@ -9,11 +9,17 @@ const SectionOne = () => {
       <div className="max-w-[1200px] mx-auto px-3 md:px-0 pt-10">
         <div className="flex flex-col items-center w-full overflow-x-hidden gap-y-12 md:flex-row gap-x-6">
           <div className="md:w-[527px]">
-            <h1 className="text-[28px] text-center md:text-left md:text-[40px] font-bold mb-3">
-              Unlock your <span className="text-[#2525BB]" >financial</span> potentials with <span className="text-[#2525BB]" >Trades Trek</span>
+         
+
+          <h1 className="text-[28px] text-center md:text-left md:text-[40px] font-bold mb-3">
+          <span  className="text-[#2525BB]">Trades Trek</span> Stock Trading Simulator:  The Best Way to Learn How to Trade <span className="text-[#2525BB]" >Stocks in Nigeria </span>
             </h1>
+            {/* <h1 className="text-[28px] text-center md:text-left md:text-[40px] font-bold mb-3">
+              Unlock your <span className="text-[#2525BB]" >financial</span> potentials with <span className="text-[#2525BB]" >Trades Trek</span>
+            </h1> */}
             <p className="mb-10 text-lg font-light text-center md:text-left">
-              Experience the World of Financial Education and Investment Simulation in One Place
+            Welcome to the ultimate stock trading simulator that will supercharge your investment journey. With our realistic, cutting-edge simulator application, 
+            you'll gain the skills and confidence needed to succeed in the Nigerian stock market.
             </p>
             <div className="flex items-center justify-center md:justify-start gap-x-3">
               <a href="https://apps.apple.com/ng/app/trades-trek/id6451382635" target="_blank" rel="noreferrer">

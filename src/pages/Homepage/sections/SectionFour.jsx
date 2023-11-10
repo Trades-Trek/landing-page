@@ -4,93 +4,93 @@ import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import { useQuery } from "react-query";
 import { getPricing } from "../../../api/general.api";
 
-// const pricing = [
-//   {
-//     title: "Basic Plan",
-//     monthly: 0,
-//     annually: 0,
-//     features: [
-//       {
-//         feature: "Virtual cash",
-//         valid: true,
-//       },
-//       {
-//         feature: "Two trades monthly",
-//         valid: true,
-//       },
-//       {
-//         feature: "Refer and earn",
-//         valid: true,
-//       },
-//       {
-//         feature: "Create competition",
-//         valid: false,
-//       },
-//       {
-//         feature: "Leader board reward ",
-//         valid: false,
-//       },
-//     ],
-//   },
-//   {
-//     title: "Standard Plan",
-//     monthly: 500,
-//     annually: 5400,
-//     features: [
-//       {
-//         feature: "Virtual cash",
-//         valid: true,
-//       },
-//       {
-//         feature: "Two trades monthly",
-//         valid: true,
-//       },
-//       {
-//         feature: "Refer and earn",
-//         valid: true,
-//       },
-//       {
-//         feature: "Create competition",
-//         valid: true,
-//       },
-//       {
-//         feature: "Leader board reward ",
-//         valid: false,
-//       },
-//     ],
-//   },
-//   {
-//     title: "Premium Plan",
-//     monthly: 1000,
-//     annually: 10800,
-//     features: [
-//       {
-//         feature: "Virtual cash",
-//         valid: true,
-//       },
-//       {
-//         feature: "Two trades monthly",
-//         valid: true,
-//       },
-//       {
-//         feature: "Refer and earn",
-//         valid: true,
-//       },
-//       {
-//         feature: "Create competition",
-//         valid: true,
-//       },
-//       {
-//         feature: "Leader board reward ",
-//         valid: true,
-//       },
-//     ],
-//   },
-// ];
+const pricing = [
+  {
+    title: "Basic Plan",
+    monthly: 0,
+    annually: 0,
+    features: [
+      {
+        feature: "Virtual cash",
+        valid: true,
+      },
+      {
+        feature: "Two trades monthly",
+        valid: true,
+      },
+      {
+        feature: "Refer and earn",
+        valid: true,
+      },
+      {
+        feature: "Create competition",
+        valid: false,
+      },
+      {
+        feature: "Leader board reward ",
+        valid: false,
+      },
+    ],
+  },
+  {
+    title: "Standard Plan",
+    monthly: 500,
+    annually: 5400,
+    features: [
+      {
+        feature: "Virtual cash",
+        valid: true,
+      },
+      {
+        feature: "Two trades monthly",
+        valid: true,
+      },
+      {
+        feature: "Refer and earn",
+        valid: true,
+      },
+      {
+        feature: "Create competition",
+        valid: true,
+      },
+      {
+        feature: "Leader board reward ",
+        valid: false,
+      },
+    ],
+  },
+  {
+    title: "Premium Plan",
+    monthly: 1000,
+    annually: 10800,
+    features: [
+      {
+        feature: "Virtual cash",
+        valid: true,
+      },
+      {
+        feature: "Two trades monthly",
+        valid: true,
+      },
+      {
+        feature: "Refer and earn",
+        valid: true,
+      },
+      {
+        feature: "Create competition",
+        valid: true,
+      },
+      {
+        feature: "Leader board reward ",
+        valid: true,
+      },
+    ],
+  },
+];
 
 const SectionFour = () => {
   const [monthly, setMonthly] = useState(true);
-  const {isLoading,data:pricing} = useQuery('getPricing',getPricing,{'refetchOnWindowFocus':false})
+  // const {isLoading,data:pricing} = useQuery('getPricing',getPricing,{'refetchOnWindowFocus':false})
   
   return (
     <div className="w-full bg-[#F6F7F8F7]">
@@ -124,7 +124,7 @@ const SectionFour = () => {
           </button>
         </div>
         <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-3 mt-14">
-          {/* {pricing.map((price, id) => (
+          {pricing.map((price, id) => (
             <div
               key={id}
               className="w-full bg-white px-[25px] pt-[25px] pb-14 rounded-lg"
@@ -176,46 +176,8 @@ const SectionFour = () => {
               </ul>
             </div>
           ))}
- */}
-  {
-    pricing?.map((price,index)=>(
-      <div
-      className="w-full bg-white px-[25px] pt-[25px] pb-14 rounded-lg"
-      >
-          <p className="mb-1 text-2xl font-medium">
-            <span
-              className={
-                   " text-palette-three"
-                  // "text-palette-four"
-                  //  "text-[#2525BB]"
-              }
-            >
-              {price.name}
-            </span>
-          </p>
-          <p className="text-2xl font-medium">{monthly?price.monthly_price.toLocaleString("en-US"):price.yearly_price}</p>
-          <p className="text-sm text-neutral-600">{monthly?price.monthly_price_discount:price.yearly_price_discount}% discount</p>
 
-          <ul className="list-none mt-12 p-0 flex flex-col gap-y-3.5">
-              <li className="flex gap-[25px] items-center">
-                  <IoIosCheckbox className="text-xl text-palette-two" />
-                  {/* <MdCheckBoxOutlineBlank className="text-xl text-palette-two" /> */}
-                <p className="text-xl font-light">{
-                  price.features.field1
-                }</p>
-              </li>
-              <li className="flex gap-[25px] items-center">
-                  <IoIosCheckbox className="text-xl text-palette-two" />
-                  {/* <MdCheckBoxOutlineBlank className="text-xl text-palette-two" /> */}
-                <p className="text-xl font-light">{
-                  price.features.field2
-                }</p>
-              </li>
-          </ul>
 
-      </div>
-    ))
-  }
 
         </div>
       </div>

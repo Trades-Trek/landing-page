@@ -14,12 +14,20 @@ const Footer = () => {
     <div>
       <div className="flex flex-col items-center justify-center gap-y-7 md:flex-row bg-palette-one gap-x-14">
         <div className="md:w-[579px] px-3 md:px-0">
+        <br />
+
           <h2 className="font-bold text-[32px] text-center md:text-left mb-2 pt-12 md:pt-0">
-            Invest Smarter, Learn Faster!
+            {/* Invest Smarter, Learn Faster! */}
+            Download the Trades Trek Stock Trading Simulator App Today and Start Learning How to Trade Stocks Risk-Free!
           </h2>
           <p className=" mb-16 text-lg font-light text-center md:text-left leading-[25px]">
+          Whether you're a complete beginner or a seasoned trader, the Trades Trek Stock Trading Simulator App is the perfect tool to help you improve your trading skills.
+          <br />
+           With real-time stock market data, a simulated trading environment, and access to expert advice, you can learn how to trade stocks like a pro without putting any of your own money at risk.
+The Trades Trek Stock Trading Simulator App is also a great way to test out new investment strategies and 
+
             The Trades Trek App - Your Path to Financial Mastery. <br/>Download
-            Today!
+            Today!  learn from your mistakes without any financial consequences. So what are you waiting for? Download the Trades Trek Stock Trading Simulator App today and start your journey to becoming a successful stock trader!
           </p>
           <div className="flex flex-col items-center md:flex-row gap-y-4 gap-x-3">
             <a 
@@ -46,6 +54,8 @@ const Footer = () => {
               </button>
             </a>
           </div>
+          <br /><br />
+
         </div>
         <div className="flex justify-center md:block">
           <img src={Illustrate} alt="illustration of a boy" />
