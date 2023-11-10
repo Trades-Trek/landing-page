@@ -1,15 +1,24 @@
+import { useQuery } from "react-query";
+import { cachedTime, getAboutUs } from "../../../api/general.api";
+
 const SectionOne = () => {
+
+  const { isLoading:contentLoading,data:content } = useQuery('getAboutUs',getAboutUs,cachedTime)
+
   return (
     <div className=" bg-palette-one">
       <div className="max-w-[1200px] px-3 md:px-0 mx-auto pt-[72px] pb-[122px]">
         <h2 className="md:text-center capitalize text-[28px] md:text-[40px] font-bold mb-[25px]">
-          We are your Pocket-sized investment adventure
+          {/* We are your Pocket-sized investment adventure */}
+          {content?.title}
         </h2>
         <p className="font-light md:font-normal md:text-center text-lg mb-[45px] leading-[25px]">
-          At Trades Trek, we believe that financial success should be within
+          {/* At Trades Trek, we believe that financial success should be within
           everyone&apos;s reach. We&apos;re dedicated to providing you with the
           knowledge and tools you need to navigate the world of investments and
-          achieve your financial goals.
+          achieve your financial goals. */}
+          {content?.subtitle}
+          
         </p>
         {/* <p className="font-light md:font-normal md:text-center text-lg mb-[45px] leading-[25px]">
           Our mission is to empower individuals to take control of their

@@ -17,7 +17,7 @@ export const GenegralResponseAndError = {
         handlError(err)
       }
 }
-
+export const cachedTime = {cacheTime:10000 * 600 * 50}
 export const communitySignUpApi = async(data:WaitListI):Promise<SuccessResponse>=>{
     const form = new FormData()
     form.append('first_name',data.first_name)
@@ -66,4 +66,92 @@ export const getKeyFeatureApi = async():Promise<KeyFeature[]>=>{
 
   const resp = await api.get(`/features`)
   return resp.data.data
+}
+
+
+export type Pricing ={
+  "name": string,
+  "monthly_price": string,
+  "monthly_price_discount":string,
+  "yearly_price": string,
+  "yearly_price_discount": string,
+  "features": {
+      "field1": string,
+      "field2": number,
+      "field3": string
+  }
+}
+export const getPricing = async ():Promise<Pricing[]>=>{
+
+    const resp = await api.get('/plans')
+    return resp.data.data
+}
+
+export type TestimonialI = {
+  "first_name": string,
+  "last_name": string,
+  "occupation":string,
+  "company_name": string,
+  "position": string,
+  "rating": string,
+  "review": string,
+  "image": string
+}
+export const getTestimonials = async ():Promise<TestimonialI[]>=>{
+
+  const resp = await api.get('/testimonials')
+  return resp.data.data
+}
+
+
+
+
+export const joinNewsLetterApi = async ({email}:{email:string})=>{
+  const form = new FormData()
+  form.append('email',email)
+  const resp = await api.post('/subscribe',form)
+  return resp.data
+}
+
+type CompanyInfoI = {
+  "support_email": string,
+  "contact_email": string,
+  "address_ln1": string,
+  "address_ln2": string,
+  "city": string,
+  "state": string,
+  "country": string,
+  "phone": null|string|number,
+  "ios_download_url":string,
+  "android_download_url": string,
+  "dynamic_link": string,
+  "facebook_url": string,
+  "twitter_url": string,
+  "instagram_url": string,
+  "linkedin_url": string,
+  "pinterest_url": string,
+  "threads_url": string,
+  "site_description": string,
+  "mission_statement": string,
+  "vision_statement": string
+}
+export const getCompanyInfoApi = async ():Promise<CompanyInfoI>=>{
+
+
+  const resp = await api.get('/company-information',)
+  return resp.data.data
+}
+
+//get pages content
+type AboutUsI ={
+  title:string,
+  subtitle:string,
+  content:string,
+  images:{
+    banner:string
+  },
+}
+export const getAboutUs = async():Promise<AboutUsI>=>{
+  const resp = await api.get('/page/about-us',)
+  return resp.data.data 
 }

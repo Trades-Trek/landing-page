@@ -1,4 +1,8 @@
+import { useQuery } from "react-query";
+import { getCompanyInfoApi } from "../../../api/general.api";
+
 const SectionTwo = () => {
+  const {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,{cacheTime:10000 * 600 * 50})
   return (
     <div className="w-full">
       <div className="max-w-[1200px] mx-auto py-12 flex justify-between items-center">
@@ -10,9 +14,12 @@ const SectionTwo = () => {
         </div>
         <div>
           <p className="text-lg font-medium">
-            4 Ayanboye Street,
-            <br /> Anthony Village Lagos
+            Address 1: <strong>{data.address_ln1}</strong>
           </p>
+          <p className="text-lg font-medium">
+            Address 2: <strong>{data.address_ln2}</strong>
+          </p>
+
         </div>
       </div>
       <div className="w-full">
