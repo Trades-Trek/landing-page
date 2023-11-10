@@ -77,7 +77,7 @@ const SectionFive = () => {
           <div className="flex justify-center">
             <div className="relative w-fit mb-14">
               <h2 className="text-2xl md:text-[32px] font-bold pb-3">
-                Testimonial
+              See What Our Users Have to Say
               </h2>
               <div className="absolute bottom-0 w-[83px] h-[9px] bg-palette-two left-0 rounded-[40px]"></div>
             </div>
