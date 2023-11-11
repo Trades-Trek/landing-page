@@ -50,7 +50,7 @@ button:focus-visible {
 }
 
 .faqPage {
-  background-image: url("./assets/Images/Home/faq.png");
+  background-image: url("./assets/Images/Home/faq-background.jpg");
   background-size: contain;
   background-position: bottom right;
   background-repeat: no-repeat;

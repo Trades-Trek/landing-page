@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
-import Illustrate1 from "../../../assets/Images/About/Illustrate1.png";
-import Illustrate2 from "../../../assets/Images/About/Illustrate2.png";
+import Illustrate1 from "../../../assets/Images/About/about_2_illustration.jpg";
+import Illustrate2 from "../../../assets/Images/About/about_illustration.jpg";
 import { getAboutUs, getCompanyInfoApi } from "../../../api/general.api";
 import Loader, { BigLoader } from "../../../components/Loader";
 
