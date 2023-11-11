@@ -23,14 +23,14 @@ const SectionOne = () => {
             </p>
             <div className="flex items-center justify-center md:justify-start gap-x-3">
               <a href="https://apps.apple.com/ng/app/trades-trek/id6451382635" target="_blank" rel="noreferrer">
-                <img src={Appstore} alt="appstore" />
+                {/* <img src={Appstore} alt="appstore" /> */}
               </a>
               <a
                 href="https://play.google.com/store/apps/details?id=com.tradestrek.tradestrek"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={Playstore} alt="playstore" />
+                {/* <img src={Playstore} alt="playstore" /> */}
               </a>
             </div>
           </div>

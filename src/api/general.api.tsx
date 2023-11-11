@@ -155,3 +155,30 @@ export const getAboutUs = async():Promise<AboutUsI>=>{
   const resp = await api.get('/page/about-us',)
   return resp.data.data 
 }
+
+
+
+type FaqContentI = {
+  "title": string,
+        "subtitle":string,
+        "content": string,
+        "images": {"banner": string}
+}
+export const getFaqContent =  async ():Promise<FaqContentI>=>{
+  const resp = await api.get('/page/faq',)
+  return resp.data.data 
+}
+
+
+
+export const getCommunityPage = async():Promise<FaqContentI>=>{
+  const resp = await api.get('/page/join-community',)
+  return resp.data.data 
+
+}
+
+export const getContactPage =  async():Promise<FaqContentI>=>{
+  const resp = await api.get('/page/contact',)
+  return resp.data.data 
+
+}

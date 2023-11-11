@@ -1,19 +1,26 @@
 import { BsSearch } from "react-icons/bs";
 import propTypes from "prop-types";
+import { cachedTime, getFaqContent } from "../../../api/general.api";
+import { useQuery } from "react-query";
 
 const SectionOne = ({ query, setQuery }) => {
+
+  const {data} = useQuery('getFaqContent',getFaqContent,cachedTime)
+
   return (
     <div className="w-full faqPage bg-palette-one">
-      <div className="pb-[177px]" >
+      <div className="pb-[100px]" >
         <div className="pt-[45px]">
-          <div className="flex justify-center">
-            <div className="relative w-fit mb-14">
-              <h2 className="text-2xl text-center md:text-[32px] font-bold pb-3">
-                Frequently Asked Questions(FAQs)
-              </h2>
-              <div className="absolute bottom-0 w-[83px] h-[9px] bg-palette-two left-20 md:left-0 rounded-[40px]"></div>
-            </div>
-          </div>
+        <div className="max-w-[1200px] px-3 md:px-0 mx-auto pt-[72px] pb-[72px]">
+        <h2 className="md:text-center capitalize text-[28px] md:text-[40px] font-bold ">
+          {/* We are your Pocket-sized investment adventure */}
+          {data?.title}
+        </h2>
+        <p className="font-light md:font-normal md:text-center text-lg  leading-[25px]">
+          {data?.subtitle}
+        </p>
+      </div>
+
         </div>
         <div className="flex justify-center">
           <div className="md:w-[759px] h-[67px] flex items-center bg-white border-none drop-shadow-xl relative rounded-[15px]">

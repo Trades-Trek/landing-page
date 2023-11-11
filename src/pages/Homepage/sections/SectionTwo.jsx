@@ -51,7 +51,7 @@ const SectionTwo = () => {
                 {feature.title}
               </p>
               <p className="text-sm text-center md:text-left md:text-lg font-light leading-[25px]">
-                {feature.content}
+                {feature.description}
               </p>
             </div>
           </li>

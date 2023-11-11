@@ -34,14 +34,14 @@ The Trades Trek Stock Trading Simulator App is also a great way to test out new 
                           href={data?.ios_download_url}
             // href="https://apps.apple.com/ng/app/trades-trek/id6451382635"
              target="_blank" rel="noreferrer">
-              <img src={Appstore} alt="appstore" />
+              {/* <img src={Appstore} alt="appstore" /> */}
             </a>
             <a
               href={data?.android_download_url}
               target="_blank"
               rel="noreferrer"
             >
-              <img src={Playstore} alt="playstore" />
+              {/* <img src={Playstore} alt="playstore" /> */}
             </a>
             <a
               href="https://blog.tradestrek.com"

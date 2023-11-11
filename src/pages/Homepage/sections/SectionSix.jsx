@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BsPlusCircle, BsDashCircle } from "react-icons/bs";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
-import { getFaqApi } from "../../../api/general.api";
+import { getFaqApi, getFaqContent } from "../../../api/general.api";
 
 // const faqs = [
 //   {
@@ -29,6 +29,8 @@ const SectionSix = () => {
       setSelectedFaq(id);
     }
   };
+
+  const {data} = useQuery('getFaqContent',getFaqContent)
   const {isLoading,data:faqs,status} = useQuery(['getFaqApi'],()=>getFaqApi({'query':''}),)
   return (
     <div className="faqPage pt-[77px] pb-[75px] px-2 md:px-0" id="faq">
@@ -36,7 +38,8 @@ const SectionSix = () => {
         <div className="flex justify-center">
           <div className="relative w-fit mb-14">
             <h2 className="text-2xl text-center md:text-[32px] font-bold pb-3">
-              Frequently Asked Questions(FAQs)
+              {/* Frequently Asked Questions(FAQs) */}
+              {data?.title}
             </h2>
             <div className="absolute md:left-0 left-12 bottom-0 w-[83px] h-[9px] bg-palette-two rounded-[40px]"></div>
           </div>
