@@ -8,9 +8,9 @@ import InputWithLabel from '../../../components/InputWithLabel';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { useMutation } from "react-query";
+import { useMutation, useQuery } from "react-query";
 import { phoneRegExp } from "../../JoinWaitList/JoinWaitList";
-import { GenegralResponseAndError, submitContactApi } from "../../../api/general.api";
+import { GenegralResponseAndError, cachedTime, getContactPage, submitContactApi } from "../../../api/general.api";
 
 
 
@@ -88,6 +88,7 @@ const SectionOne = () => {
     mutate(data)
     console.log({'Contact Us':data})
   }
+  const {data,isLoading} = useQuery('getContactPage',getContactPage,cachedTime)
   return (
     <div className="w-full bg-palette-one">
       <div className="max-w-[1200px] mx-auto pt-10 pb-20 flex justify-center gap-x-[100px]">
@@ -95,9 +96,11 @@ const SectionOne = () => {
         <form 
                     onSubmit={handleSubmit(onSubmit)}
         className="pt-5">
-          <p className="mb-2 text-[32px] font-bold">Get in Touch with Us</p>
+          <p className="mb-2 text-[32px] font-bold">
+          {data?.title}
+          </p>
           <p className="mb-8 font-medium text-[#4E4B66]">
-            We will receive your request
+          {data?.subtitle}
           </p>
 
           <div>
