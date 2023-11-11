@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 // @ts-ignore
-import Illustrate1 from '../../assets/Images/waitchair.jpg'
+import Illustrate1 from '../../assets/Images/community.png'
 // import Illustrate1 from "../../assets/Images/Contact/Illustrate1.png";
 import InputWithLabel from "../../components/InputWithLabel";
 import { useForm } from "react-hook-form";
