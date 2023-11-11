@@ -37,7 +37,7 @@ const SectionSix = () => {
       <div className="pt-[52px]">
         <div className="flex justify-center">
           <div className="relative w-fit mb-14">
-            <h2 className="text-2xl text-center md:text-[32px] font-bold pb-3">
+            <h2 className="text-2xl text-center md:text-[32px] font-bold pb-3" style="colour:wheat">
               {/* Frequently Asked Questions(FAQs) */}
               {data?.title}
             </h2>
