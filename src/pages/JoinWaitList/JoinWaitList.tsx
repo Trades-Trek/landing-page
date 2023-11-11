@@ -8,8 +8,8 @@ import InputWithLabel from "../../components/InputWithLabel";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { useMutation } from "react-query";
-import { GenegralResponseAndError, communitySignUpApi } from "../../api/general.api";
+import { useMutation, useQuery } from "react-query";
+import { GenegralResponseAndError, cachedTime, communitySignUpApi, getCommunityPage } from "../../api/general.api";
 import { handlError } from "../../utils/extraFunc";
 import toast from "react-hot-toast"
 
@@ -38,6 +38,8 @@ const JoinWaitList =()=>{
         mutate(data)
     }
 
+    const {data,isLoading} = useQuery('getCommunityPage',getCommunityPage,cachedTime)
+
     return (
         <div className="w-full bg-palette-one">
         <div className="max-w-[1200px] mx-auto pt-10 pb-20 flex justify-center gap-x-[100px]" 
@@ -47,9 +49,14 @@ const JoinWaitList =()=>{
           <form
                     onSubmit={handleSubmit(onSubmit)}
           className="pt-5 md:w-1/2">
-            <p className="mb-2 text-[32px] font-bold">Join Community</p>
+            <p className="mb-2 text-[32px] font-bold">
+              {/* Join Community */}
+              {data?.title}
+              </p>
             <p className="mb-8 font-medium text-[#4E4B66]">
-             Thanks for beign a part of the journey
+             {/* Thanks for beign a part of the journey */}
+             {data?.subtitle}
+
             </p>
             <div>
                 <InputWithLabel 

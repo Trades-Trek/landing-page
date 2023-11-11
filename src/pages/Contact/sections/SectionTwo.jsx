@@ -14,10 +14,10 @@ const SectionTwo = () => {
         </div>
         <div>
           <p className="text-lg font-medium">
-            Address 1: <strong>{data.address_ln1}</strong>
+            <strong>{data?.address_ln1}</strong>
           </p>
           <p className="text-lg font-medium">
-            Address 2: <strong>{data.address_ln2}</strong>
+             <strong>{data?.address_ln2}</strong>
           </p>
 
         </div>

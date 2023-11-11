@@ -105,6 +105,15 @@ const Navbar = () => {
                     Blog
                   </a>
                 </li>
+                <li
+                className="px-4 py-3 border-y"
+                >
+                <Link to="/join-community"
+                                    className="text-lg font-medium text-black"
+                >
+               Join Community
+              </Link>
+                </li>
                 <li className="px-4 py-3 border-y">
                   <Link
                     to="/contact"

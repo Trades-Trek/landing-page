@@ -12,12 +12,11 @@ const Footer = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-center gap-y-7 md:flex-row bg-palette-one gap-x-14">
+      {/* <div className="flex flex-col items-center justify-center gap-y-7 md:flex-row bg-palette-one gap-x-14">
         <div className="md:w-[579px] px-3 md:px-0">
         <br />
 
           <h2 className="font-bold text-[32px] text-center md:text-left mb-2 pt-12 md:pt-0">
-            {/* Invest Smarter, Learn Faster! */}
             Download the Trades Trek Stock Trading Simulator App Today and Start Learning How to Trade Stocks Risk-Free!
           </h2>
           <p className=" mb-16 text-lg font-light text-center md:text-left leading-[25px]">
@@ -32,16 +31,13 @@ The Trades Trek Stock Trading Simulator App is also a great way to test out new 
           <div className="flex flex-col items-center md:flex-row gap-y-4 gap-x-3">
             <a 
                           href={data?.ios_download_url}
-            // href="https://apps.apple.com/ng/app/trades-trek/id6451382635"
              target="_blank" rel="noreferrer">
-              <img src={Appstore} alt="appstore" />
             </a>
             <a
               href={data?.android_download_url}
               target="_blank"
               rel="noreferrer"
             >
-              <img src={Playstore} alt="playstore" />
             </a>
             <a
               href="https://blog.tradestrek.com"
@@ -60,7 +56,7 @@ The Trades Trek Stock Trading Simulator App is also a great way to test out new 
         <div className="flex justify-center md:block">
           <img src={Illustrate} alt="illustration of a boy" />
         </div>
-      </div>
+      </div> */}
       <div className="px-3 py-20 md:px-0 bg-palette-two">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 gap-y-[35px] md:grid-cols-4">
           <div>
