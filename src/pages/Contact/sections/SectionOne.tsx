@@ -91,7 +91,7 @@ const SectionOne = () => {
   return (
     <div className="w-full bg-palette-one">
       <div className="max-w-[1200px] mx-auto pt-10 pb-20 flex justify-center gap-x-[100px]">
-        <img src={Illustrate1} alt="illustration" className="hidden md:block" />
+        <img src={Illustrate1} alt="Image of male trades trek customer care agent in a suit" className="hidden md:block" />
         <form 
                     onSubmit={handleSubmit(onSubmit)}
         className="pt-5">

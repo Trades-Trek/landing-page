@@ -43,7 +43,7 @@ const JoinWaitList =()=>{
         <div className="max-w-[1200px] mx-auto pt-10 pb-20 flex justify-center gap-x-[100px]" 
         // style={{'border':'1px solid red'}}
         >
-          <img src={Illustrate1} alt="illustration" className="hidden md:block w-1/2" />
+          <img src={Illustrate1} alt="Image of 4 Nigerian male Trades Trek users, happy at the Stock markets simulation application" className="hidden md:block w-1/2" />
           <form
                     onSubmit={handleSubmit(onSubmit)}
           className="pt-5 md:w-1/2">
