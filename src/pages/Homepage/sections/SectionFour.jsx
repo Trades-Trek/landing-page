@@ -42,7 +42,7 @@ const pricing = [
         valid: true,
       },
       {
-        feature: "Two trades monthly",
+        feature: "Unlimited monthly trades",
         valid: true,
       },
       {
@@ -69,7 +69,7 @@ const pricing = [
         valid: true,
       },
       {
-        feature: "Two trades monthly",
+        feature: "Unlimited monthly trades",
         valid: true,
       },
       {

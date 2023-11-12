@@ -53,7 +53,7 @@ const Navbar = () => {
                 FAQ
               </Link>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="https://play.google.com/store/apps/details?id=com.tradestrek.tradestrek"
                 target="_blank"
@@ -63,7 +63,7 @@ const Navbar = () => {
                   Get the App
                 </button>
               </a>
-            </li>
+            </li> */}
           </ul>
           <FiMenu
             className="text-3xl font-semibold md:hidden"
@@ -127,7 +127,7 @@ const Navbar = () => {
                     FAQ
                   </Link>
                 </li>
-
+{/* 
                 <li className="flex justify-center px-4 py-3 border-t">
                   <a
                     href="https://play.google.com/store/apps/details?id=com.tradestrek.tradestrek"
@@ -138,7 +138,7 @@ const Navbar = () => {
                       Get the App
                     </button>
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
