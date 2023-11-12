@@ -15,7 +15,7 @@ const pricing = [
         valid: true,
       },
       {
-        feature: "Two trades monthly",
+        feature: "Two simulated trades monthly",
         valid: true,
       },
       {
@@ -42,7 +42,7 @@ const pricing = [
         valid: true,
       },
       {
-        feature: "Unlimited monthly trades",
+        feature: "Unlimited Simulated Trades",
         valid: true,
       },
       {
@@ -69,7 +69,7 @@ const pricing = [
         valid: true,
       },
       {
-        feature: "Unlimited monthly trades",
+        feature: "Unlimited Simulated Trades",
         valid: true,
       },
       {
@@ -87,6 +87,7 @@ const pricing = [
     ],
   },
 ];
+
 
 const SectionFour = () => {
   const [monthly, setMonthly] = useState(true);
