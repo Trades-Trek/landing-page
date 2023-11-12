@@ -21,7 +21,7 @@ const SectionOne = () => {
             Welcome to the ultimate stock trading simulator that will supercharge your investment journey. With our realistic, cutting-edge simulator application, 
             you'll gain the skills and confidence needed to succeed in the Nigerian stock market.
             </p>
-            {/* <div className="flex items-center justify-center md:justify-start gap-x-3">
+             <div className="flex items-center justify-center md:justify-start gap-x-3">
               <a href="https://apps.apple.com/ng/app/trades-trek/id6451382635" target="_blank" rel="noreferrer">
                 {/* <img src={Appstore} alt="appstore" /> */}
               </a>
@@ -32,7 +32,7 @@ const SectionOne = () => {
               >
                 {/* <img src={Playstore} alt="playstore" /> */}
               </a>
-            </div> */}
+            </div> 
           </div>
           <div>
             <div className="flex items-end gap-14 ">
