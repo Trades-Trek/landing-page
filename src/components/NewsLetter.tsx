@@ -26,8 +26,14 @@ const NewsLetter =()=>{
       }
     return (
         <div className="container  mx-auto ">
+          
   <section className="mb-10">
-    <div className="relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://mdbcdn.b-cdn.net/img/new/textures/full/66.jpg')] h-[300px]"></div>
+    {/* <img src={Newsletterimage} alt="" /> */}
+    {/* <div className={`relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://mdbcdn.b-cdn.net/img/new/textures/full/66.jpg')] h-[300px]`}></div> */}
+    {/* <div className={`relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('${Newsletterimage}')] h-[300px]`}></div> */}
+    <div className={`relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://img.freepik.com/free-vector/gradient-stock-market-concept_23-2149166910.jpg?w=740&t=st=1699869184~exp=1699869784~hmac=aa18922923b785d9d3956a49c3a6f35e26959ded91ff045aa56c40e083378cfd')]
+    
+    h-[300px]`}></div>
     <div className="container px-6 md:px-12">
       <div
         className="block rounded-lg 

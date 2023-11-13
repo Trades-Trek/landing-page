@@ -16,7 +16,7 @@ const SectionOne = ({ query, setQuery }) => {
           {/* We are your Pocket-sized investment adventure */}
           {data?.title}
         </h2>
-        <p className="font-light md:font-normal md:text-center text-lg  leading-[25px]">
+        <p className="font-light md:font-normal md:text-center text-lg text-white  leading-[25px]">
           {data?.subtitle}
         </p>
       </div>
