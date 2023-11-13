@@ -21,7 +21,7 @@ const PageRoutes = () => {
       <div className="w-full" >
         <Navbar />
       </div>
-      <div className="min-h-screen" >
+      <div className="min-h-screen "  >
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about-us" element={<About />} />
