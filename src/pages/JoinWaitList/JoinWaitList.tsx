@@ -48,7 +48,7 @@ const JoinWaitList =()=>{
           <img src={Illustrate1} alt="illustration" className="hidden md:block w-1/2" />
           <form
                     onSubmit={handleSubmit(onSubmit)}
-          className="pt-5 md:w-1/2">
+          className="pt-5 md:w-1/2  px-5">
             <p className="mb-2 text-[32px] font-bold">
               {/* Join Community */}
               {data?.title}

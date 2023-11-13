@@ -13,7 +13,7 @@ const SectionTwo = () => {
   return (
     <div className="max-w-[1200px] mx-auto">
       <div className="pt-[110px]">
-        <div className="flex justify-center">
+        <div className="flex justify-center  px-5">
           <div className="relative w-fit mb-28">
             <h2 className="text-2xl md:text-[32px] font-bold pb-3">
               {/* Key Features */}

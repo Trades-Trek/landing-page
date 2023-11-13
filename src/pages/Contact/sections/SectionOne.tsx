@@ -11,7 +11,8 @@ import * as yup from "yup";
 import { useMutation, useQuery } from "react-query";
 import { phoneRegExp } from "../../JoinWaitList/JoinWaitList";
 import { GenegralResponseAndError, cachedTime, getContactPage, submitContactApi } from "../../../api/general.api";
-
+import { useRef } from 'react';
+import ReCAPTCHA from "react-google-recaptcha"
 
 
 const schema = yup.object({
@@ -25,7 +26,9 @@ const schema = yup.object({
 export type ContactI = yup.InferType<typeof schema>
 const SectionOne = () => {
  
-
+  const captchaRef = useRef(null)
+              // @ts-ignore
+  const VITE_APP_SITE_KEY =import.meta.env.VITE_APP_SITE_KEY
   // const emailjsConfig = {
   //   USER_ID: import.meta.env.VITE_USER_ID,
   //   SERVICE_ID: import.meta.env.VITE_SERVICE_ID,
@@ -85,17 +88,29 @@ const SectionOne = () => {
     resolver: yupResolver(schema)
   })
   const onSubmit = (data:ContactI)=>{
-    mutate(data)
-    console.log({'Contact Us':data})
+    // @ts-ignore
+    const token:any = captchaRef?.current?.getValue();
+    // @ts-ignore
+    captchaRef?.current?.reset();
+    // mutate(data)
+    // console.log({'Contact Us':data})
   }
   const {data,isLoading} = useQuery('getContactPage',getContactPage,cachedTime)
   return (
-    <div className="w-full bg-palette-one">
+    <div className="w-full bg-palette-one  px-3">
       <div className="max-w-[1200px] mx-auto pt-10 pb-20 flex justify-center gap-x-[100px]">
         <img src={Illustrate1} alt="illustration" className="hidden md:block" />
         <form 
                     onSubmit={handleSubmit(onSubmit)}
         className="pt-5">
+            {/* {
+              VITE_APP_SITE_KEY?
+              <ReCAPTCHA
+                    sitekey={VITE_APP_SITE_KEY} 
+                    ref={captchaRef}
+                    />:''
+            } */}
+
           <p className="mb-2 text-[32px] font-bold">
           {data?.title}
           </p>
