@@ -3,7 +3,7 @@ import React from 'react'
 // @ts-ignore
 import checkmark from '../assets/checkbox.svg'
 import { features } from 'process'
-
+import { motion } from 'framer-motion'
 type Prop ={
 isMain?:boolean
 planName:string,
@@ -15,9 +15,12 @@ planFeatures:string[]
 const PricingComponent = ({isMain=false,planName,planNameColor,planAmount,planYearType,planFeatures}:Prop)=>{
 
     return (
-        <div
+        <motion.div
         className={`bg-white text-center w-80 md:w-45 py-16  rounded-lg md:rounded-2xl ${isMain?'py-32  border-4 border-[rbga(140, 26, 255, 0.15)]':' shadow-md'} `}
         // style={{'border':'1px solid red'}}
+        whileHover={{
+        'scale':1.1
+        }}
         >
             <div className='pb-4'>
                 {/* heading */}
@@ -45,7 +48,7 @@ const PricingComponent = ({isMain=false,planName,planNameColor,planAmount,planYe
                 Request Access
             </button>
             <p className='text-[#0D0D0D] font-semibold'>It{"’"}s free so why not</p>
-        </div>
+        </motion.div>
     )
 }
 
