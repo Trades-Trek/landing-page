@@ -1,4 +1,6 @@
 import NewsLetter from "../../components/NewsLetter"
+import PricingComponent from "../../components/PricingComponent"
+import PricingTabs from "../../components/PricingTabs"
 import SectionFive from "./sections/SectionFive"
 import SectionFour from "./sections/SectionFour"
 import SectionOne from "./sections/SectionOne"
@@ -12,6 +14,7 @@ const Homepage = () => {
       <SectionOne />
       <SectionTwo />
       <SectionThree />
+        
       <SectionFour />
       <SectionFive />
       <SectionSix />

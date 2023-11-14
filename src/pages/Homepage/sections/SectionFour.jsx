@@ -3,6 +3,8 @@ import { IoIosCheckbox } from "react-icons/io";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import { useQuery } from "react-query";
 import { getPricing } from "../../../api/general.api";
+import PricingComponent from "../../../components/PricingComponent";
+import PricingTabs from "../../../components/PricingTabs";
 
 const pricing = [
   {
@@ -98,7 +100,7 @@ const SectionFour = () => {
       <div className="max-w-[1200px] mx-auto pb-24">
         <div className="pt-[52px]">
           <div className="flex justify-center">
-            <div className="relative w-fit mb-14">
+            <div className="relative w-fit ">
               <h2 className="text-2xl md:text-[32px] font-bold pb-3">
                 Pricing
               </h2>
@@ -106,7 +108,97 @@ const SectionFour = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center gap-x-6">
+        <PricingTabs
+          billedQuaterly={
+            <div  className="flex justify-center items-center gap-5 flex-col md:flex-row md:gap-0 ">
+              <PricingComponent 
+             planName={'Basic'}
+             planAmount={'0'}
+             planYearType={'Quarterly'}
+             planNameColor='1st'
+             planFeatures={[
+              'Expert Insight',
+              'Master Guide',
+              'Basic Course',
+              'Simulation tool',
+              'premium support'
+             ]}
+              />
+              <PricingComponent isMain
+              planNameColor='2nd'
+              planName={'Standard'}
+              planAmount={'2,800'}
+              planYearType={'Quarterly'}
+              planFeatures={[
+               'Expert Insight',
+               'Master Guide',
+               'Basic Course',
+               'Simulation tool',
+               'premium support '
+              ]}
+              
+              />
+              <PricingComponent
+              planNameColor={'3rd'}
+              planName={'Premium'}
+              planAmount={'3,800'}
+              planYearType={'Quarterly'}
+              planFeatures={[
+               'Expert Insight',
+               'Master Guide',
+               'Basic Course',
+               'Simulation tool',
+               'premium support '
+              ]}
+              />
+            </div>
+          }
+          billedYearly={
+            <div  className="flex justify-center items-center gap-5 flex-col md:flex-row md:gap-0 ">
+              <PricingComponent
+             planName={'Basic'}
+             planAmount={'0'}
+             planYearType={'Quarterly'}
+             planNameColor='1st'
+             planFeatures={[
+              'Expert Insight',
+              'Master Guide',
+              'Basic Course',
+              'Simulation tool',
+              'premium support'
+             ]}
+              />
+              <PricingComponent isMain
+              planNameColor='2nd'
+              planName={'Standard'}
+              planAmount={'2,800'}
+              planYearType={'Quarterly'}
+              planFeatures={[
+               'Expert Insight',
+               'Master Guide',
+               'Basic Course',
+               'Simulation tool',
+               'premium support '
+              ]}
+              
+              />
+              <PricingComponent
+              planNameColor={'3rd'}
+              planName={'Premium'}
+              planAmount={'3,800'}
+              planYearType={'Quarterly'}
+              planFeatures={[
+               'Expert Insight',
+               'Master Guide',
+               'Basic Course',
+               'Simulation tool',
+               'premium support '
+              ]}
+              />
+            </div>
+          }
+        />
+        {/* <div className="flex justify-center gap-x-6">
           <button
             className={`border-none h-[47px] md:h-[66px] font-semibold text-lg md:text-xl rounded-[20px] text-[15px] md:px-[30px] ${
               monthly ? "bg-palette-two text-white" : "bg-[#82828240]"
@@ -180,7 +272,7 @@ const SectionFour = () => {
 
 
 
-        </div>
+        </div> */}
       </div>
     </div>
   );
