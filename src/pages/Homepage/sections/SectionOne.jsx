@@ -2,8 +2,11 @@ import Appstore from "../../../assets/Images/appstore.png";
 import Playstore from "../../../assets/Images/playstore.png";
 import Illustrate2 from "../../../assets/Images/Home/Illustrate1.png";
 import Illustrate1 from "../../../assets/Images/Home/Illustrate2.png";
+import { useQuery } from "react-query";
+import { cachedTime, getCompanyInfoApi } from "../../../api/general.api";
 
 const SectionOne = () => {
+  const  {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,cachedTime)
   return (
     <div className="w-full bg-palette-one">
       <div className="max-w-[1200px] mx-auto px-3 md:px-0 pt-10">
@@ -22,15 +25,23 @@ const SectionOne = () => {
             you'll gain the skills and confidence needed to succeed in the Nigerian stock market.
             </p>
              <div className="flex items-center justify-center md:justify-start gap-x-3">
-              <a href="https://apps.apple.com/ng/app/trades-trek/id6451382635" target="_blank" rel="noreferrer">
-                <img src={Appstore} alt="appstore" />
+              <a href={data?.ios_download_url??'#'} target="_blank" rel="noreferrer">
+                {
+                  !isLoading?
+                  <img src={Appstore} alt="appstore" />:''
+                }
               </a>
               <a
-                href="https://play.google.com/store/apps/details?id=com.tradestrek.tradestrek"
+                // href="https://play.google.com/store/apps/details?id=com.tradestrek.tradestrek"
+                href={data?.android_download_url??''}
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={Playstore} alt="playstore" />
+                {
+                  !isLoading?
+                  <img src={Playstore} alt="playstore" />
+                  :''
+                }
               </a>
             </div> 
           </div>
