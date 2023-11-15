@@ -3,6 +3,8 @@ import { IoIosCheckbox } from "react-icons/io";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import { useQuery } from "react-query";
 import { getPricing } from "../../../api/general.api";
+import PricingComponent from "../../../components/PricingComponent";
+import PricingTabs from "../../../components/PricingTabs";
 
 const pricing = [
   {
@@ -98,7 +100,7 @@ const SectionFour = () => {
       <div className="max-w-[1200px] mx-auto pb-24">
         <div className="pt-[52px]">
           <div className="flex justify-center">
-            <div className="relative w-fit mb-14">
+            <div className="relative w-fit ">
               <h2 className="text-2xl md:text-[32px] font-bold pb-3">
                 Pricing
               </h2>
@@ -106,6 +108,98 @@ const SectionFour = () => {
             </div>
           </div>
         </div>
+        <PricingTabs
+          billedQuaterly={
+            <div  className="flex justify-center items-center gap-5 flex-col md:flex-row md:gap-0 ">
+              <PricingComponent 
+             planName={'Basic'}
+             planAmount={'0'}
+             planYearType={'Free'}
+             planNameColor='1st'
+             planFeatures={[
+              'Virtual cash',
+              'Two simulated trades monthly',
+              'Refer and earn',
+              'Create competition',
+              'Leader board reward'
+             ]}
+              />
+              <PricingComponent isMain
+              planNameColor='2nd'
+              planName={'Standard'}
+              planAmount={'500'}
+              planYearType={'Monthly'}
+              planFeatures={[
+               'Virtual cash',
+               'Unlimited Simulated Trades',
+               'Refer and earn',
+               'Create competition',
+               'Leader board reward '
+              ]}
+              
+              />
+              <PricingComponent
+              planNameColor={'3rd'}
+              planName={'Premium'}
+              planAmount={'3,800'}
+              planYearType={'Quarterly'}
+              planFeatures={[
+               'Virtual cash',
+               'Unlimited Simulated Trades',
+               'Refer and earn',
+               'Simulation tool',
+               'Create competition'
+              ]}
+              />
+            </div>
+          }
+          billedYearly={
+            <div  className="flex justify-center items-center gap-5 flex-col md:flex-row md:gap-0 ">
+            <PricingComponent 
+           planName={'Basic'}
+           planAmount={'0'}
+           planYearType={'Free'}
+           planNameColor='1st'
+           planFeatures={[
+            'Virtual cash',
+            'Two simulated trades monthly',
+            'Refer and earn',
+            'Create competition',
+            'Leader board reward'
+           ]}
+            />
+            <PricingComponent isMain
+            planNameColor='2nd'
+            planName={'Standard'}
+            planAmount={'5,400'}
+            planYearType={'Annually 10% Discount'}
+            planFeatures={[
+             'Virtual cash',
+             'Unlimited Simulated Trades',
+             'Refer and earn',
+             'Create competition',
+             'Leader board reward '
+            ]}
+            
+            />
+            <PricingComponent
+            planNameColor={'3rd'}
+            planName={'Premium'}
+            planAmount={'10,800'}
+            planYearType={'Annually 10% Discount'}
+            planFeatures={[
+             'Virtual cash',
+             'Unlimited Simulated Trades',
+             'Refer and earn',
+             'Create competition',
+             'Leader board reward'
+            ]}
+            />
+          </div>
+          }
+        />
+        {/* <br />
+        <br />
         <div className="flex justify-center gap-x-6">
           <button
             className={`border-none h-[47px] md:h-[66px] font-semibold text-lg md:text-xl rounded-[20px] text-[15px] md:px-[30px] ${
@@ -180,7 +274,7 @@ const SectionFour = () => {
 
 
 
-        </div>
+        </div> */}
       </div>
     </div>
   );
