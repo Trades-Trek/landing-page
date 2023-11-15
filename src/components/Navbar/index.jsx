@@ -2,9 +2,12 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from "../../assets/Images/Nav/Logo.png";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useEffect, useState } from "react";
+import { cachedTime, getCompanyInfoApi } from "../../api/general.api";
+import { useQuery } from "react-query";
 const Navbar = () => {
   const pathname = useLocation().pathname;
   const [openMenu, setOpenMenu] = useState(false);
+  const  {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,cachedTime)
 
   useEffect(() => {
     setOpenMenu(false);
@@ -127,10 +130,9 @@ const Navbar = () => {
                     FAQ
                   </Link>
                 </li>
-{/* 
                 <li className="flex justify-center px-4 py-3 border-t">
                   <a
-                    href="https://play.google.com/store/apps/details?id=com.tradestrek.tradestrek"
+                    href={!isLoading?data.dynamic_link??'':''}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -138,7 +140,7 @@ const Navbar = () => {
                       Get the App
                     </button>
                   </a>
-                </li> */}
+                </li>
               </ul>
             </div>
           </div>
