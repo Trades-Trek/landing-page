@@ -4,6 +4,8 @@ import React from 'react'
 import checkmark from '../assets/checkbox.svg'
 import { features } from 'process'
 import { motion } from 'framer-motion'
+import { cachedTime, getCompanyInfoApi } from '../api/general.api'
+import { useQuery } from 'react-query'
 type Prop ={
 isMain?:boolean
 planName:string,
@@ -13,6 +15,7 @@ planYearType:string,
 planFeatures:string[]
 }
 const PricingComponent = ({isMain=false,planName,planNameColor,planAmount,planYearType,planFeatures}:Prop)=>{
+    const  {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,cachedTime)
 
     return (
         <motion.div
@@ -44,7 +47,14 @@ const PricingComponent = ({isMain=false,planName,planNameColor,planAmount,planYe
 }
             </ul>
 
-            <button style={{'outline':'none'}} className={`w-64 rounded-full mb-3  ${!isMain?'text-black border-[#8C1AFF] border-2 bg-white':'bg-[#8C1AFF] text-white'}`}>  
+            <button style={{'outline':'none'}} 
+            onClick={e=>{
+                if(data?.dynamic_link){
+                    window.open(data.dynamic_link,'_blank')
+                }
+                // data?.dynamic_link
+            }}
+            className={`w-64 rounded-full mb-3  ${!isMain?'text-black border-[#8C1AFF] border-2 bg-white':'bg-[#8C1AFF] text-white'}`}>  
                 Request Access
             </button>
             <p className='text-[#0D0D0D] font-semibold'>It{"’"}s free so why not</p>
