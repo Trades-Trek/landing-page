@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom"
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import Homepage from "../pages/Homepage"
@@ -7,7 +7,7 @@ import Contact from "../pages/Contact"
 import Faq from "../pages/FAQ"
 import TermsConditions from "../pages/Terms"
 import PrivacyPolicy from "../pages/Privacy"
-import { useEffect } from "react"
+import { useEffect, useLayoutEffect } from "react"
 import JoinWaitList from "../pages/JoinWaitList/JoinWaitList"
 
 const PageRoutes = () => {
@@ -30,6 +30,8 @@ const PageRoutes = () => {
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/join-community" element={<JoinWaitList />} />
+          <Route path="/terms" element={<Dummy />} />
+          
         </Routes>
       </div>
       <div className="w-full" >
@@ -40,3 +42,15 @@ const PageRoutes = () => {
 }
 
 export default PageRoutes
+
+const Dummy =()=>{
+  const navigate = useNavigate()
+
+  useLayoutEffect(()=>{
+    navigate('/terms-conditions')
+  },[])
+
+  return(
+   <TermsConditions />
+  )
+}

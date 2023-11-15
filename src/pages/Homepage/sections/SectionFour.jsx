@@ -114,27 +114,27 @@ const SectionFour = () => {
               <PricingComponent 
              planName={'Basic'}
              planAmount={'0'}
-             planYearType={'Quarterly'}
+             planYearType={'Free'}
              planNameColor='1st'
              planFeatures={[
-              'Expert Insight',
-              'Master Guide',
-              'Basic Course',
-              'Simulation tool',
-              'premium support'
+              'Virtual cash',
+              'Two simulated trades monthly',
+              'Refer and earn',
+              'Create competition',
+              'Leader board reward'
              ]}
               />
               <PricingComponent isMain
               planNameColor='2nd'
               planName={'Standard'}
-              planAmount={'2,800'}
-              planYearType={'Quarterly'}
+              planAmount={'500'}
+              planYearType={'Monthly'}
               planFeatures={[
-               'Expert Insight',
-               'Master Guide',
-               'Basic Course',
-               'Simulation tool',
-               'premium support '
+               'Virtual cash',
+               'Unlimited Simulated Trades',
+               'Refer and earn',
+               'Create competition',
+               'Leader board reward '
               ]}
               
               />
@@ -144,61 +144,63 @@ const SectionFour = () => {
               planAmount={'3,800'}
               planYearType={'Quarterly'}
               planFeatures={[
-               'Expert Insight',
-               'Master Guide',
-               'Basic Course',
+               'Virtual cash',
+               'Unlimited Simulated Trades',
+               'Refer and earn',
                'Simulation tool',
-               'premium support '
+               'Create competition'
               ]}
               />
             </div>
           }
           billedYearly={
             <div  className="flex justify-center items-center gap-5 flex-col md:flex-row md:gap-0 ">
-              <PricingComponent
-             planName={'Basic'}
-             planAmount={'0'}
-             planYearType={'Quarterly'}
-             planNameColor='1st'
-             planFeatures={[
-              'Expert Insight',
-              'Master Guide',
-              'Basic Course',
-              'Simulation tool',
-              'premium support'
-             ]}
-              />
-              <PricingComponent isMain
-              planNameColor='2nd'
-              planName={'Standard'}
-              planAmount={'2,800'}
-              planYearType={'Quarterly'}
-              planFeatures={[
-               'Expert Insight',
-               'Master Guide',
-               'Basic Course',
-               'Simulation tool',
-               'premium support '
-              ]}
-              
-              />
-              <PricingComponent
-              planNameColor={'3rd'}
-              planName={'Premium'}
-              planAmount={'3,800'}
-              planYearType={'Quarterly'}
-              planFeatures={[
-               'Expert Insight',
-               'Master Guide',
-               'Basic Course',
-               'Simulation tool',
-               'premium support '
-              ]}
-              />
-            </div>
+            <PricingComponent 
+           planName={'Basic'}
+           planAmount={'0'}
+           planYearType={'Free'}
+           planNameColor='1st'
+           planFeatures={[
+            'Virtual cash',
+            'Two simulated trades monthly',
+            'Refer and earn',
+            'Create competition',
+            'Leader board reward'
+           ]}
+            />
+            <PricingComponent isMain
+            planNameColor='2nd'
+            planName={'Standard'}
+            planAmount={'5,400'}
+            planYearType={'Annually 10% Discount'}
+            planFeatures={[
+             'Virtual cash',
+             'Unlimited Simulated Trades',
+             'Refer and earn',
+             'Create competition',
+             'Leader board reward '
+            ]}
+            
+            />
+            <PricingComponent
+            planNameColor={'3rd'}
+            planName={'Premium'}
+            planAmount={'10,800'}
+            planYearType={'Annually 10% Discount'}
+            planFeatures={[
+             'Virtual cash',
+             'Unlimited Simulated Trades',
+             'Refer and earn',
+             'Create competition',
+             'Leader board reward'
+            ]}
+            />
+          </div>
           }
         />
-        {/* <div className="flex justify-center gap-x-6">
+        {/* <br />
+        <br />
+        <div className="flex justify-center gap-x-6">
           <button
             className={`border-none h-[47px] md:h-[66px] font-semibold text-lg md:text-xl rounded-[20px] text-[15px] md:px-[30px] ${
               monthly ? "bg-palette-two text-white" : "bg-[#82828240]"
