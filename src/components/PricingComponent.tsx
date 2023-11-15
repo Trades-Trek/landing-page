@@ -55,9 +55,9 @@ const PricingComponent = ({isMain=false,planName,planNameColor,planAmount,planYe
                 // data?.dynamic_link
             }}
             className={`w-64 rounded-full mb-3  ${!isMain?'text-black border-[#8C1AFF] border-2 bg-white':'bg-[#8C1AFF] text-white'}`}>  
-                Request Access
+                Get Started
             </button>
-            <p className='text-[#0D0D0D] font-semibold'>It{"’"}s free so why not</p>
+            {/* <p className='text-[#0D0D0D] font-semibold'>It{"’"}s free so why not</p> */}
         </motion.div>
     )
 }
