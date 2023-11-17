@@ -20,7 +20,6 @@ const SectionTwo = ({ query }:any) => {
   const handleFilter =(value:string)=>{
     setFilter(`?subject=${value}`)
   }
-  console.log({status})
   return (
     <div className="bg-[#F9F9F9] pt-[77px] pb-[75px] px-2 md:px-0 faq" id="faq">
 

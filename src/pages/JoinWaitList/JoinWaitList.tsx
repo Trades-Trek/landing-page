@@ -34,7 +34,6 @@ const JoinWaitList =()=>{
       });
     
     const onSubmit = (data:WaitListI)=>{
-        console.log(data)
 
         mutate(data)
     }
