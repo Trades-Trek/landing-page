@@ -1,4 +1,4 @@
-import Illustrate from "../../assets/Images/Footer/Illustrate.png";
+import Illustrate from "../../assets/Images/footer_image.png";
 import Appstore from "../../assets/Images/appstore.png";
 import Playstore from "../../assets/Images/playstore.png";
 import Logo from "../../assets/Images/Footer/LogoWhite.png";
@@ -8,36 +8,34 @@ import { cachedTime, getCompanyInfoApi } from "../../api/general.api";
 import { useQuery } from "react-query";
 
 const Footer = () => {
-  const {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,cachedTime)
+  const {data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,cachedTime)
 
   return (
     <div>
-      {/* <div className="flex flex-col items-center justify-center gap-y-7 md:flex-row bg-palette-one gap-x-14">
+      <div className="flex flex-col items-center justify-center gap-y-7 md:flex-row bg-palette-one gap-x-14">
         <div className="md:w-[579px] px-3 md:px-0">
         <br />
 
           <h2 className="font-bold text-[32px] text-center md:text-left mb-2 pt-12 md:pt-0">
-            Download the Trades Trek Stock Trading Simulator App Today and Start Learning How to Trade Stocks Risk-Free!
+          Download the Trades Trek Stock Trading Simulator App Today
           </h2>
-          <p className=" mb-16 text-lg font-light text-center md:text-left leading-[25px]">
-          Whether you're a complete beginner or a seasoned trader, the Trades Trek Stock Trading Simulator App is the perfect tool to help you improve your trading skills.
-          <br />
-           With real-time stock market data, a simulated trading environment, and access to expert advice, you can learn how to trade stocks like a pro without putting any of your own money at risk.
-The Trades Trek Stock Trading Simulator App is also a great way to test out new investment strategies and 
+          <p className=" mb-8 text-lg font-light text-center md:text-left leading-[25px]">
 
-            The Trades Trek App - Your Path to Financial Mastery. <br/>Download
-            Today!  learn from your mistakes without any financial consequences. So what are you waiting for? Download the Trades Trek Stock Trading Simulator App today and start your journey to becoming a successful stock trader!
+          Download the Trades Trek Stock Trading Simulator App Today and Start Learning How to Trade Stocks Risk-Free! Win weekly and monthly cash prizes in our Trades Trek simulation trades competitions.
+
           </p>
           <div className="flex flex-col items-center md:flex-row gap-y-4 gap-x-3">
             <a 
                           href={data?.ios_download_url}
              target="_blank" rel="noreferrer">
+                 <img src={Appstore} alt="appstore" />
             </a>
             <a
               href={data?.android_download_url}
               target="_blank"
               rel="noreferrer"
             >
+                <img src={Playstore} alt="playstore" />
             </a>
             <a
               href="https://blog.tradestrek.com"
@@ -54,9 +52,9 @@ The Trades Trek Stock Trading Simulator App is also a great way to test out new 
 
         </div>
         <div className="flex justify-center md:block">
-          <img src={Illustrate} alt="illustration of a boy" />
+          <img src={Illustrate} alt="illustration of a girl" />
         </div>
-      </div> */}
+      </div>
       <div className="px-3 py-20 md:px-0 bg-palette-two">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 gap-y-[35px] md:grid-cols-4">
           <div>

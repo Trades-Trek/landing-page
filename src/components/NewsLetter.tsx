@@ -21,7 +21,6 @@ const NewsLetter =()=>{
       })
       const {isLoading,mutate} = useMutation(joinNewsLetterApi,GenegralResponseAndError)
       const onSubmit = (data:NewsLetterI)=>{
-        console.log(data)
         mutate(data)
       }
     return (

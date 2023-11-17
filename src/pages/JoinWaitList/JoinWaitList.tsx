@@ -12,6 +12,7 @@ import { useMutation, useQuery } from "react-query";
 import { GenegralResponseAndError, cachedTime, communitySignUpApi, getCommunityPage } from "../../api/general.api";
 import { handlError } from "../../utils/extraFunc";
 import toast from "react-hot-toast"
+import MetaComponent from "../../components/MetaComponent";
 
 
 export const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -33,7 +34,6 @@ const JoinWaitList =()=>{
       });
     
     const onSubmit = (data:WaitListI)=>{
-        console.log(data)
 
         mutate(data)
     }
@@ -41,6 +41,9 @@ const JoinWaitList =()=>{
     const {data,isLoading} = useQuery('getCommunityPage',getCommunityPage,cachedTime)
 
     return (
+      <>
+        <MetaComponent page='join-community' />
+
         <div className="w-full bg-palette-one">
         <div className="max-w-[1200px] mx-auto pt-10 pb-20 flex justify-center gap-x-[100px]" 
         // style={{'border':'1px solid red'}}
@@ -118,6 +121,8 @@ const JoinWaitList =()=>{
           </form>
         </div>
       </div>
+      </>
+
     )
 }
 
