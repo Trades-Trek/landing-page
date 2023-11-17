@@ -1,6 +1,5 @@
+import MetaComponent from "../../components/MetaComponent"
 import NewsLetter from "../../components/NewsLetter"
-import PricingComponent from "../../components/PricingComponent"
-import PricingTabs from "../../components/PricingTabs"
 import SectionFive from "./sections/SectionFive"
 import SectionFour from "./sections/SectionFour"
 import SectionOne from "./sections/SectionOne"
@@ -11,6 +10,8 @@ import SectionTwo from "./sections/SectionTwo"
 const Homepage = () => {
   return (
     <div>
+      <MetaComponent  page='home'/>
+      
       <SectionOne />
       <SectionTwo />
       <SectionThree />

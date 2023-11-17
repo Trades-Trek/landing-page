@@ -133,7 +133,8 @@ type CompanyInfoI = {
   "threads_url": string,
   "site_description": string,
   "mission_statement": string,
-  "vision_statement": string
+  "vision_statement": string,
+  'home_page_banner':string
 }
 export const getCompanyInfoApi = async ():Promise<CompanyInfoI>=>{
 
@@ -179,6 +180,24 @@ export const getCommunityPage = async():Promise<FaqContentI>=>{
 
 export const getContactPage =  async():Promise<FaqContentI>=>{
   const resp = await api.get('/page/contact',)
+  return resp.data.data 
+
+}
+
+
+
+type PageResponseI ={
+  title:string,
+  subtitle:string,
+  content:string,
+  meta_description:string,
+  images:{
+    banner:string
+  },
+}
+
+export const getPageApi =  async({page}:{page: 'home'|'about-us'|'join-community'|'contact-us'|'faq'}):Promise<PageResponseI>=>{
+  const resp = await api.get(`/page/${page}`,)
   return resp.data.data 
 
 }
