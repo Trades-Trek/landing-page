@@ -1,7 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from 'next/navigation'
+
 
 const SectionOne = () => {
-  const pathname = useLocation().pathname;
+  const pathname = usePathname();
+  console.log({pathname})
   return (
     <div>
       <div className="max-w-[1200px] px-3 md:px-0 mx-auto pt-[72px] pb-[122px]">

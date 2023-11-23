@@ -77,7 +77,7 @@ const SectionThree = () => {
             >
               <div className="flex justify-center">
                 <div className="w-[72px] h-[72px] mb-[18px] rounded-full bg-[#EBEBEB] flex justify-center items-center">
-                  <img src={benefit.icon} alt="benefit" />
+                  <img src={benefit.icon.src} alt="benefit" />
                 </div>
               </div>
               <p className="text-center font-medium text-[22px] mb-2">
