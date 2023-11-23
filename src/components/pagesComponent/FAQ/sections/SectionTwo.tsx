@@ -3,12 +3,12 @@ import { useState } from "react";
 import { BsPlusCircle, BsDashCircle } from "react-icons/bs";
 import propTypes from "prop-types";
 import { useQueries, useQuery } from "react-query";
-import { getFaqApi } from "../../../api/general.api";
+import { getFaqApi } from "@/api/general.api";
 
 
 const SectionTwo = ({ query }:any) => {
   const [selectedFaq, setSelectedFaq] = useState(null);
-  const handleSelect = (id) => {
+  const handleSelect = (id:any) => {
     if (selectedFaq === id) {
       setSelectedFaq(null);
     } else {

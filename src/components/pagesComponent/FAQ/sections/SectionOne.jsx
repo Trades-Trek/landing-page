@@ -1,6 +1,6 @@
 import { BsSearch } from "react-icons/bs";
 import propTypes from "prop-types";
-import { cachedTime, getFaqContent } from "../../../api/general.api";
+import { cachedTime, getFaqContent } from "@/api/general.api";
 import { useQuery } from "react-query";
 
 const SectionOne = ({ query, setQuery }) => {
