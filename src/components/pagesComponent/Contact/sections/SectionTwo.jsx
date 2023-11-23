@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { getCompanyInfoApi } from "../../../api/general.api";
+import { getCompanyInfoApi } from "@/api/general.api";
 
 const SectionTwo = () => {
   const {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,{cacheTime:10000 * 600 * 50})

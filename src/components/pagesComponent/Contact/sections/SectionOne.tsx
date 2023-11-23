@@ -1,18 +1,15 @@
 import React from "react";
 import { useState } from "react";
 // @ts-ignore
-import Illustrate1 from "../../../assets/Images/Contact/Illustrate1.png";
-import emailjs from "emailjs-com";
-import { toast } from "react-toastify";
-import InputWithLabel from '../../../components/InputWithLabel';
+import Illustrate1 from "@/assets/Images/Contact/Illustrate1.png";
+import InputWithLabel from '@/components/InputWithLabel';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useMutation, useQuery } from "react-query";
-import { phoneRegExp } from "../../JoinWaitList/JoinWaitList";
-import { GenegralResponseAndError, cachedTime, getContactPage, submitContactApi } from "../../../api/general.api";
+import { phoneRegExp } from "@/pages/join-community";
+import { GenegralResponseAndError, cachedTime, getContactPage, submitContactApi } from "@/api/general.api";
 import { useRef } from 'react';
-import ReCAPTCHA from "react-google-recaptcha"
 
 
 const schema = yup.object({
@@ -28,7 +25,7 @@ const SectionOne = () => {
  
   const captchaRef = useRef(null)
               // @ts-ignore
-  const VITE_APP_SITE_KEY =import.meta.env.VITE_APP_SITE_KEY
+  // const VITE_APP_SITE_KEY =import.meta.env.VITE_APP_SITE_KEY
   // const emailjsConfig = {
   //   USER_ID: import.meta.env.VITE_USER_ID,
   //   SERVICE_ID: import.meta.env.VITE_SERVICE_ID,
@@ -91,15 +88,15 @@ const SectionOne = () => {
     // @ts-ignore
     const token:any = captchaRef?.current?.getValue();
     // @ts-ignore
-    captchaRef?.current?.reset();
-    // mutate(data)
+    // captchaRef?.current?.reset();
+    mutate(data)
     // console.log({'Contact Us':data})
   }
   const {data,isLoading} = useQuery('getContactPage',getContactPage,cachedTime)
   return (
     <div className="w-full bg-palette-one  px-3">
       <div className="max-w-[1200px] mx-auto pt-10 pb-20 flex justify-center gap-x-[100px]">
-        <img src={Illustrate1} alt="illustration" className="hidden md:block" />
+        <img src={Illustrate1.src} alt="illustration" className="hidden md:block" />
         <form 
                     onSubmit={handleSubmit(onSubmit)}
         className="pt-5">

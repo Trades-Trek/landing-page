@@ -7,6 +7,8 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
+import NextNProgress from 'nextjs-progressbar';
+
 
 
 const queryClient = new QueryClient()
@@ -15,7 +17,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
 
     <QueryClientProvider client={queryClient}>
-      <Toaster/>    
+        <NextNProgress color='#7f00ff' />
+        <Toaster/>    
 
           <Component {...pageProps} />
     </QueryClientProvider>
