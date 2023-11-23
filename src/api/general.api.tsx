@@ -1,0 +1,203 @@
+import { ContactI } from '../pages/Contact/sections/SectionOne'
+import {WaitListI} from '../pages/JoinWaitList/JoinWaitList'
+import { handlError } from '../utils/extraFunc'
+import api from './axios'
+import toast from "react-hot-toast"
+
+type SuccessResponse ={
+    status:string,
+    message:string,
+    data:any
+}
+export const GenegralResponseAndError = {
+    'onSuccess':(data)=>{
+        toast.success(data.message)
+      },
+      'onError':(err:any)=>{
+        handlError(err)
+      }
+}
+export const cachedTime = {cacheTime:10000 * 600 * 50}
+export const communitySignUpApi = async(data:WaitListI):Promise<SuccessResponse>=>{
+    const form = new FormData()
+    form.append('first_name',data.first_name)
+    form.append('last_name',data.last_name)
+    form.append('birth_year',data.birth_year.toString())
+    form.append('email',data.email)
+    form.append('phone_number',data.phone_number.toString())
+    const resp = await api.post('/community-sign-up',form)
+    return resp.data
+}
+
+export const submitContactApi = async (data:ContactI)=>{
+    const form = new FormData()
+    form.append('first_name',data.first_name)
+    form.append('last_name',data.last_name)
+    form.append('subject',data.subject)
+    form.append('message',data.message)
+    form.append('email',data.email)
+    form.append('phone',data.phone)
+  const resp = await api.post('/contact',form)
+  return resp.data
+}
+
+export type FaqI = {
+  subject:string,
+  question:string,
+  answer:string
+
+}
+export const getFaqApi = async ({query=''}:{query?:string}):Promise<FaqI[]>=>{
+  // let query = 
+
+  const resp = await api.get(`faq${query}`)
+  return resp.data.data
+}
+
+
+type KeyFeature ={
+  title:string,
+  description:string,
+  image:string
+}
+
+export const getKeyFeatureApi = async():Promise<KeyFeature[]>=>{
+  
+
+  const resp = await api.get(`/features`)
+  return resp.data.data
+}
+
+
+export type Pricing ={
+  "name": string,
+  "monthly_price": string,
+  "monthly_price_discount":string,
+  "yearly_price": string,
+  "yearly_price_discount": string,
+  "features": {
+      "field1": string,
+      "field2": number,
+      "field3": string
+  }
+}
+export const getPricing = async ():Promise<Pricing[]>=>{
+
+    const resp = await api.get('/plans')
+    return resp.data.data
+}
+
+export type TestimonialI = {
+  "first_name": string,
+  "last_name": string,
+  "occupation":string,
+  "company_name": string,
+  "position": string,
+  "rating": string,
+  "review": string,
+  "image": string
+}
+export const getTestimonials = async ():Promise<TestimonialI[]>=>{
+
+  const resp = await api.get('/testimonials')
+  return resp.data.data
+}
+
+
+
+
+export const joinNewsLetterApi = async ({email}:{email:string})=>{
+  const form = new FormData()
+  form.append('email',email)
+  const resp = await api.post('/subscribe',form)
+  return resp.data
+}
+
+type CompanyInfoI = {
+  "support_email": string,
+  "contact_email": string,
+  "address_ln1": string,
+  "address_ln2": string,
+  "city": string,
+  "state": string,
+  "country": string,
+  "phone": null|string|number,
+  "ios_download_url":string,
+  "android_download_url": string,
+  "dynamic_link": string,
+  "facebook_url": string,
+  "twitter_url": string,
+  "instagram_url": string,
+  "linkedin_url": string,
+  "pinterest_url": string,
+  "threads_url": string,
+  "site_description": string,
+  "mission_statement": string,
+  "vision_statement": string,
+  'home_page_banner':string
+}
+export const getCompanyInfoApi = async ():Promise<CompanyInfoI>=>{
+
+
+  const resp = await api.get('/company-information',)
+  return resp.data.data
+}
+
+//get pages content
+type AboutUsI ={
+  title:string,
+  subtitle:string,
+  content:string,
+  images:{
+    banner:string
+  },
+}
+export const getAboutUs = async():Promise<AboutUsI>=>{
+  const resp = await api.get('/page/about-us',)
+  return resp.data.data 
+}
+
+
+
+type FaqContentI = {
+  "title": string,
+        "subtitle":string,
+        "content": string,
+        "images": {"banner": string}
+}
+export const getFaqContent =  async ():Promise<FaqContentI>=>{
+  const resp = await api.get('/page/faq',)
+  return resp.data.data 
+}
+
+
+
+export const getCommunityPage = async():Promise<FaqContentI>=>{
+  const resp = await api.get('/page/join-community',)
+  return resp.data.data 
+
+}
+
+export const getContactPage =  async():Promise<FaqContentI>=>{
+  const resp = await api.get('/page/contact',)
+  return resp.data.data 
+
+}
+
+
+
+type PageResponseI ={
+  title:string,
+  subtitle:string,
+  content:string,
+  meta_description:string,
+  images:{
+    banner:string
+  },
+}
+
+export const getPageApi =  async({page}:{page: 'home'|'about-us'|'join-community'|'contact-us'|'faq'}):Promise<PageResponseI>=>{
+  const resp = await api.get(`/page/${page}`,)
+  return resp.data.data 
+
+}
