@@ -9,29 +9,24 @@ import SectionSix from '@/components/pagesComponent/Homepage/sections/SectionSix
 import { Inter,Poppins } from 'next/font/google'
 import NewsLetter from '@/components/NewsLetter'
 import Navbar from '@/components/Navbar'
+import GeneralLaout from '@/layout/GeneralLaout'
 
 
 // const inter = Poppins({ subsets: ['latin-ext'] })
 
 export default function Home() {
   return (
-    <div className='w-full'>
-        <div className='w-full bg-palette-one'>
+      <GeneralLaout>
 
-        <div className="max-w-[1200px] mx-auto px-3 md:px-0" >
-        <Navbar />
-      </div>
-      </div>
-
-      <SectionOne/>
-      <SectionTwo />
-      <SectionThree />
-        
-      <SectionFour />
-      <SectionFive />
-      <SectionSix />
-      <NewsLetter />
+        <SectionOne/>
+        <SectionTwo />
+        <SectionThree />
+          
+        <SectionFour />
+        <SectionFive />
+        <SectionSix />
+        <NewsLetter />
     
-    </div>
+      </GeneralLaout>
   )
 }

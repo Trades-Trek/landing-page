@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { cachedTime, getAboutUs } from "../../../api/general.api";
+import { cachedTime, getAboutUs } from "@/api/general.api";
 
 const SectionOne = () => {
 

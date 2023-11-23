@@ -1,9 +1,9 @@
-import Illustrate from "../../assets/Images/footer_image.png";
-import Appstore from "../../assets/Images/appstore.png";
-import Playstore from "../../assets/Images/playstore.png";
-import Logo from "../../assets/Images/Footer/LogoWhite.png";
+import Illustrate from "@/assets/Images/footer_image.png";
+import Appstore from "@/assets/Images/appstore.png";
+import Playstore from "@/assets/Images/playstore.png";
+import Logo from "@/assets/Images/Footer/LogoWhite.png";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { cachedTime, getCompanyInfoApi } from "../../api/general.api";
+import { cachedTime, getCompanyInfoApi } from "@/api/general.api";
 import { useQuery } from "react-query";
 import Link from "next/link";
 
@@ -26,16 +26,16 @@ const Footer = () => {
           </p>
           <div className="flex flex-col items-center md:flex-row gap-y-4 gap-x-3">
             <a 
-                          href={data?.ios_download_url}
+                          href={data?.ios_download_url??''}
              target="_blank" rel="noreferrer">
-                 <img src={Appstore} alt="appstore" />
+                 <img src={Appstore.src} alt="appstore" />
             </a>
             <a
-              href={data?.android_download_url}
+              href={data?.android_download_url??''}
               target="_blank"
               rel="noreferrer"
             >
-                <img src={Playstore} alt="playstore" />
+                <img src={Playstore.src} alt="playstore" />
             </a>
             <a
               href="https://blog.tradestrek.com"
@@ -52,13 +52,13 @@ const Footer = () => {
 
         </div>
         <div className="flex justify-center md:block">
-          <img src={Illustrate} alt="illustration of a girl" />
+          <img src={Illustrate.src} alt="illustration of a girl" />
         </div>
       </div>
       <div className="px-3 py-20 md:px-0 bg-palette-two">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 gap-y-[35px] md:grid-cols-4">
           <div>
-            <img src={Logo} alt="Logo" className="mb-5" />
+            <img src={Logo.src} alt="Logo" className="mb-5" />
             <p className="font-bold text-white">
               © Copyright 2023 Trades Trek.
               <br />
@@ -70,12 +70,12 @@ const Footer = () => {
               <p className="font-bold text-white">Company</p>
             </li>
             <li className="mb-3">
-              <Link to="/" className="font-medium text-white">
+              <Link href="/" className="font-medium text-white">
                 Home
               </Link>
             </li>
             <li className="mb-3">
-              <Link to="/about-us" className="font-medium text-white">
+              <Link href="/about-us" className="font-medium text-white">
                 About Us
               </Link>
             </li>
@@ -90,12 +90,12 @@ const Footer = () => {
               </a>
             </li>
             <li className="mb-3">
-              <Link to="/contact" className="font-medium text-white">
+              <Link href="/contact" className="font-medium text-white">
                 Contact
               </Link>
             </li>
             <li className="mb-3">
-              <Link to="/faq" className="font-medium text-white">
+              <Link href="/faq" className="font-medium text-white">
                 FAQ
               </Link>
             </li>
@@ -105,12 +105,12 @@ const Footer = () => {
               <p className="font-bold text-white">Legal</p>
             </li>
             <li className="mb-3">
-              <Link to="/terms-conditions" className="font-medium text-white">
+              <Link href="/terms-conditions" className="font-medium text-white">
                 Terms & Conditions
               </Link>
             </li>
             <li className="mb-3">
-              <Link to="/privacy-policy" className="font-medium text-white">
+              <Link href="/privacy-policy" className="font-medium text-white">
                 Privacy Policy
               </Link>
             </li>
@@ -122,7 +122,7 @@ const Footer = () => {
             <li className="flex items-center gap-x-4">
               <a
                 // href="https://web.facebook.com/TradesTrek/"
-                href={data?.facebook_url}
+                href={data?.facebook_url??''}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -130,7 +130,7 @@ const Footer = () => {
               </a>
               <a
                 // href="https://twitter.com/TradesTrek"
-                href={data?.twitter_url}
+                href={data?.twitter_url??''}
 
                 target="_blank"
                 rel="noreferrer"

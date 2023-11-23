@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
-import Illustrate1 from "../../../assets/Images/About/about_2_illustration.jpg";
-import Illustrate2 from "../../../assets/Images/About/about_illustration.jpg";
-import { getAboutUs, getCompanyInfoApi } from "../../../api/general.api";
-import Loader, { BigLoader } from "../../../components/Loader";
+import Illustrate1 from "@/assets/Images/About/about_2_illustration.jpg";
+import Illustrate2 from "@/assets/Images/About/about_illustration.jpg";
+import { getAboutUs, getCompanyInfoApi } from "@/api/general.api";
+import Loader, { BigLoader } from "@/components/Loader";
 
 const SectionTwo = () => {
 
@@ -18,7 +18,7 @@ const SectionTwo = () => {
         {/* Row 1 */}
         <div className="grid w-full grid-cols-1 overflow-hidden rounded-3xl purpleBg md:grid-cols-2 mb-14 md:items-center">
           <div>
-            <img src={Illustrate1} alt="illustration" className="w-full" />
+            <img src={Illustrate1.src} alt="illustration" className="w-full" />
           </div>
           <div className="md:pl-[77px]">
             <div className="md:w-[473px] px-4 md:px-0">
@@ -44,7 +44,7 @@ const SectionTwo = () => {
             </div>
           </div>
           <div className="order-first md:order-last" >
-            <img src={Illustrate2} alt="illustration" className="w-full" />
+            <img src={Illustrate2.src} alt="illustration" className="w-full" />
           </div>
         </div>
       </div>
