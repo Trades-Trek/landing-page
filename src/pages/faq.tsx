@@ -1,3 +1,4 @@
+import MetaComponent from "@/components/MetaComponent";
 import SectionOne from "@/components/pagesComponent/FAQ/sections/SectionOne";
 import SectionTwo from "@/components/pagesComponent/FAQ/sections/SectionTwo";
 import GeneralLaout from "@/layout/GeneralLaout";
@@ -11,6 +12,9 @@ const Faq = ()=>{
 
     return (
         <GeneralLaout>
+        <MetaComponent
+        page='faq'
+        />
       <SectionOne query={query} setQuery={setQuery} />
       <SectionTwo query={query} />
         </GeneralLaout>

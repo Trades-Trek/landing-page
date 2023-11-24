@@ -10,6 +10,7 @@ import { Inter,Poppins } from 'next/font/google'
 import NewsLetter from '@/components/NewsLetter'
 import Navbar from '@/components/Navbar'
 import GeneralLaout from '@/layout/GeneralLaout'
+import MetaComponent from '@/components/MetaComponent'
 
 
 // const inter = Poppins({ subsets: ['latin-ext'] })
@@ -17,7 +18,9 @@ import GeneralLaout from '@/layout/GeneralLaout'
 export default function Home() {
   return (
       <GeneralLaout>
-
+        <MetaComponent
+        page='home'
+        />
         <SectionOne/>
         <SectionTwo />
         <SectionThree />

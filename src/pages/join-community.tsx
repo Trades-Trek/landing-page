@@ -42,8 +42,11 @@ const JoinCommunity = ()=>{
     const {data,isLoading} = useQuery('getCommunityPage',getCommunityPage,cachedTime)
 
 
-    return (
-        <GeneralLaout>
+      return (
+          <GeneralLaout>
+                    <MetaComponent 
+          page='join-community'
+          />
         <div className="w-full bg-palette-one">
         <div className="max-w-[1200px] mx-auto pt-10 pb-20 flex justify-center gap-x-[100px]" 
         // style={{'border':'1px solid red'}}
