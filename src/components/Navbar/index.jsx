@@ -1,21 +1,22 @@
 import Link from "next/link";
-import { usePathname } from 'next/navigation'
 import Logo from "../../assets/Images/Nav/Logo.png";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import { cachedTime, getCompanyInfoApi } from "../../api/general.api";
 import { useQuery } from "react-query";
+import { usePathname } from "next/navigation";
+import { useMediaQuery } from 'react-responsive'
 const Navbar = () => {
   const pathname = usePathname();
-  const [openMenu, sehrefpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   const  {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,cachedTime)
-
   useEffect(() => {
-    sehrefpenMenu(false);
+    setOpenMenu(false);
   }, [pathname]);
+
   return (
     <div className="w-full bg-palette-one">
-      <div className="max-w-[1200px] mx-auhref px-3 md:px-0">
+      <div className="max-w-[1200px] mx-auto px-3 md:px-0">
         <div className="flex items-center justify-between w-full h-28 ">
           <Link href="/">
             <img src={Logo.src} alt="Logo" />
@@ -31,21 +32,14 @@ const Navbar = () => {
                 About Us
               </Link>
             </li>
+
             <li>
-              <a
-                href="https://blog.tradestrek.com"
-                target="_blank"
-                rel="noreferrer"
-                className="text-lg font-light text-black"
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <Link href="/join-community" className="text-lg font-light text-black">
-               Join Community
+              <Link href="#" className="text-lg font-light text-black">
+              Features
               </Link>
             </li>
+             
+        <ResourcesDropdown />
             <li>
               <Link href="/contact" className="text-lg font-light text-black">
                 Contact Us
@@ -58,29 +52,29 @@ const Navbar = () => {
             </li>
             {/* <li>
               <a
-                href="https://play.google.com/shrefre/apps/details?id=com.tradestrek.tradestrek"
+                href="https://play.google.com/store/apps/details?id=com.tradestrek.tradestrek"
                 target="_blank"
                 rel="noreferrer"
               >
-                <buthrefn className="px-5 h-[57px] border-none bg-palette-two text-white rounded-[15px] text-lg font-semibold">
+                <button className="px-5 h-[57px] border-none bg-palette-two text-white rounded-[15px] text-lg font-semibold">
                   Get the App
-                </buthrefn>
+                </button>
               </a>
             </li> */}
           </ul>
           <FiMenu
             className="text-3xl font-semibold md:hidden"
-            onClick={() => sehrefpenMenu(true)}
+            onClick={() => setOpenMenu(true)}
           />
           <div
-            className={`md:hidden transition-all duration-500 right-0 hrefp-0 fixed overflow-hidden bg-white z-[99999] h-screen ${
+            className={`md:hidden transition-all duration-500 right-0 top-0 fixed overflow-hidden bg-white z-[99999] h-screen ${
               openMenu ? "w-screen" : "w-0"
             }`}
           >
             <div>
               <div className="flex justify-end px-3 pt-6 pb-10">
                 <FiX
-                  onClick={() => sehrefpenMenu(false)}
+                  onClick={() => setOpenMenu(false)}
                   className="text-3xl text-black"
                 />
               </div>
@@ -98,25 +92,20 @@ const Navbar = () => {
                     About Us
                   </Link>
                 </li>
+                
                 <li className="px-4 py-3 border-y">
-                  <a
-                    href="https://blog.tradestrek.com"
-                    target="_blank"
-                    rel="noreferrer"
+                  <Link
+                    href="#"
                     className="text-lg font-medium text-black"
                   >
-                    Blog
-                  </a>
+              Features
+
+                  </Link>
                 </li>
-                <li
-                className="px-4 py-3 border-y"
-                >
-                <Link href="/join-community"
-                                    className="text-lg font-medium text-black"
-                >
-               Join Community
-              </Link>
-                </li>
+                
+                <ResourcesDropdown />
+
+
                 <li className="px-4 py-3 border-y">
                   <Link
                     href="/contact"
@@ -136,9 +125,9 @@ const Navbar = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <buthrefn className="px-8 h-[47px] border-none bg-palette-two text-white rounded-[15px] font-semibold">
+                    <button className="px-8 h-[47px] border-none bg-palette-two text-white rounded-[15px] font-semibold">
                       Get the App
-                    </buthrefn>
+                    </button>
                   </a>
                 </li>
               </ul>
@@ -151,3 +140,58 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const ResourcesDropdown =()=>{
+  const [resourceDropdown,setResourceDropdown] = useState(false)
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
+  return (
+    <li 
+            
+    onMouseOver={e=>{
+      if(!isTabletOrMobile){
+        setResourceDropdown(true)
+      }
+    }}
+    onMouseOut={e=>{
+      if(!isTabletOrMobile){
+        setResourceDropdown(false)
+      }
+  }}
+  onClick={e=>{
+    e.preventDefault()
+    if(isTabletOrMobile){
+      setResourceDropdown(!resourceDropdown)
+    }
+  }}
+    className={`relative `}>
+      <Link href="#" className="text-lg  font-medium px-4 py-3 border-y md:px-0 md:py-0 md:border-0 md:font-light text-black flex items-center ">
+      <span>Resources</span>
+      <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+      </svg>
+      </Link>
+      <div className={`bg-[#7f00ff] absolute  px-5 text-center rounded  ${resourceDropdown?'block':'hidden'}`}>
+        <ul>
+          <li className="py-2">
+        <a
+          href="https://blog.tradestrek.com"
+          target="_blank"
+          rel="noreferrer"
+          className="text-lg font-light text-white"
+        >
+          Blog
+        </a>
+      </li >
+        <li className="py-2">
+          <Link href="/join-community" className="text-lg font-light text-white">
+            Join Community
+          </Link>
+        </li>
+
+        </ul>
+      </div>
+    </li>
+
+  )
+}
