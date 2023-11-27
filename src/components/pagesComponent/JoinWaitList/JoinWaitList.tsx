@@ -1,18 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import emailjs from "emailjs-com";
 // @ts-ignore
 import Illustrate1 from '../../assets/Images/community.png'
 // import Illustrate1 from "../../assets/Images/Contact/Illustrate1.png";
-import InputWithLabel from "../../components/InputWithLabel";
+import InputWithLabel from "@/components/InputWithLabel";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useMutation, useQuery } from "react-query";
-import { GenegralResponseAndError, cachedTime, communitySignUpApi, getCommunityPage } from "../../api/general.api";
-import { handlError } from "../../utils/extraFunc";
+import { GenegralResponseAndError, cachedTime, communitySignUpApi, getCommunityPage } from "@/api/general.api";
+import { handlError } from "@/utils/extraFunc";
 import toast from "react-hot-toast"
-import MetaComponent from "../../components/MetaComponent";
+import MetaComponent from "@/components/MetaComponent";
 
 
 export const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -48,7 +47,7 @@ const JoinWaitList =()=>{
         <div className="max-w-[1200px] mx-auto pt-10 pb-20 flex justify-center gap-x-[100px]" 
         // style={{'border':'1px solid red'}}
         >
-          <img src={Illustrate1} alt="illustration" className="hidden md:block w-1/2" />
+          <img src={Illustrate1.src} alt="illustration" className="hidden md:block w-1/2" />
           <form
                     onSubmit={handleSubmit(onSubmit)}
           className="pt-5 md:w-1/2  px-5">
