@@ -1,5 +1,5 @@
-import { ContactI } from '../pages/Contact/sections/SectionOne'
-import {WaitListI} from '../pages/JoinWaitList/JoinWaitList'
+import { ContactI } from '@/components/pagesComponent/Contact/sections/SectionOne'
+import {WaitListI} from '@/components/pagesComponent/JoinWaitList/JoinWaitList'
 import { handlError } from '../utils/extraFunc'
 import api from './axios'
 import toast from "react-hot-toast"
@@ -10,7 +10,7 @@ type SuccessResponse ={
     data:any
 }
 export const GenegralResponseAndError = {
-    'onSuccess':(data)=>{
+    'onSuccess':(data:any)=>{
         toast.success(data.message)
       },
       'onError':(err:any)=>{
