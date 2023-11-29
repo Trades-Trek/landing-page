@@ -70,7 +70,18 @@ button:focus-visible {
   background-position: center;
   background-size: cover;
 }
-
+#feature_hero_section{
+  background: url("../assets/bookfordesktop.svg") no-repeat 50%;
+}
+#playbuttonBackound{
+  background-image: url("../assets/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* height: 360px;
+  width: 100%; */
+  min-height: 300px;
+}
 .faq ul {
   list-style: disc !important;
   list-style-position: inside !important;
