@@ -34,7 +34,10 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link href="/features" className="text-lg font-light text-black">
+              <Link 
+              // href="/features"
+              href="#"
+               className="text-lg font-light text-black">
               Features
               </Link>
             </li>
@@ -95,7 +98,8 @@ const Navbar = () => {
                 
                 <li className="px-4 py-3 border-y">
                   <Link
-                    href="/features"
+                    // href="/features"
+                    href="#"
                     className="text-lg font-medium text-black"
                   >
               Features
