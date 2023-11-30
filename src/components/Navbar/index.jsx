@@ -34,7 +34,10 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link href="#" className="text-lg font-light text-black">
+              <Link 
+              // href="/features"
+              href="#"
+               className="text-lg font-light text-black">
               Features
               </Link>
             </li>
@@ -95,6 +98,7 @@ const Navbar = () => {
                 
                 <li className="px-4 py-3 border-y">
                   <Link
+                    // href="/features"
                     href="#"
                     className="text-lg font-medium text-black"
                   >
@@ -167,7 +171,7 @@ const ResourcesDropdown =()=>{
     className={`relative `}>
       <Link href="#" className="text-lg  font-medium px-4 py-3 border-y md:px-0 md:py-0 md:border-0 md:font-light text-black flex items-center ">
       <span>Resources</span>
-      <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+      <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
       </svg>
       </Link>
