@@ -21,7 +21,7 @@ const SectionOne = () => {
           <div className="md:pr-12 md:w-[280px] w-full">
             <div className="w-full py-4 pl-4 md:pl-0 md:py-0 border rounded-[5px] mb-1">
               <Link
-                to="/terms-conditions"
+                href="/terms-conditions"
                 className={`block whitespace-nowrap text-black text-sm font-semibold md:px-[15px] md:py-3.5 ${
                   pathname !== "/terms-conditions" && "opacity-40"
                 }`}
@@ -31,7 +31,7 @@ const SectionOne = () => {
             </div>
             <div className="w-full py-4 pl-4 md:pl-0 md:py-0 border rounded-[5px]">
               <Link
-                to="/privacy-policy"
+                href="/privacy-policy"
                 className={`block whitespace-nowrap text-black text-sm font-semibold md:px-[15px] md:py-3.5 ${
                   pathname !== "/privacy-policy" && "opacity-40"
                 }`}
@@ -357,7 +357,7 @@ const SectionOne = () => {
                 We take the privacy of your information seriously and dedicated
                 to protecting and securing your data. Please click the link{" "}
                 <i>
-                  <Link to="/privacy-policy">privacy policy</Link>
+                  <Link href="/privacy-policy">privacy policy</Link>
                 </i>{" "}
                 to read more about how we manage your personal information.
               </p>
