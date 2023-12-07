@@ -41,10 +41,10 @@ const Features = ()=>{
             <div className="container mx-auto" >
 
             {/* features hero section */}
-            <div id="feature_hero_section" className="text-center p-2 py-8  md:p-12 md:max-w-screen-lg md:mx-auto ">
+            <div id="feature_hero_section" className=" text-center p-2 py-8  md:p-12 md:max-w-screen-lg md:mx-auto ">
                 <img src={bookPhone.src} className="mx-auto block md:hidden " alt="" />
-            <h1 className="text-xl font-semibold text-[#203554] pb-2 md:text-5xl  ">The Staples in your Employee Engagement Toolbox</h1>
-            <p className="px-1 font-medium">
+            <h1 className="text-xl font-semibold my-10 text-[#203554] pb-2 md:text-5xl  ">The Staples in your Employee Engagement Toolbox</h1>
+            <p className="px-1 font-medium my-10">
             Connect and reach everyone, everywhere, every time with an engaging, secure mobile app that transforms communication, increases efficiencies and reduces staff turnover. 
             </p>
             </div>
@@ -52,7 +52,7 @@ const Features = ()=>{
 
 
             {/* start of content with video */}
-                <div className="p-4 bg-palette-one my-8 rounded flex flex-col gap-10  md:flex-row md:p-12">
+                <div className=" p-4 bg-palette-one my-8 rounded flex items-center flex-col gap-10 md:h-screen  md:flex-row md:p-12 lg:h-full">
                     <div className="md:w-1/2">
                         <h3 className="flex font-semibold	py-4  md:items-center md:text-2xl">
                             <img src={lockerImge.src} alt="" 
@@ -60,7 +60,7 @@ const Features = ()=>{
                             <span
                             className="block w-5/6"
                             >Secure Document Sharing with Locker</span></h3>
-                        <p className="pb-4 md:leading-8 md:text-lg	">
+                        <p className="pb-4 md:leading-10 md:text-lg	">
                         Give your employees a secure space for their personal documents with Locker, Thrive.{"App's"} digital equivalent of a physical locker. Connect all of your existing systems together on one app for on-the-go ease of use, removing the need for paper trails and manual storage. With Locker, employees can access confidential and personal files, from payslips to training certificates, and important company information - everything they need at their fingertips. Empower your employees to consume the content they want for a more connected employee experience.
                         </p>
 
@@ -70,7 +70,7 @@ const Features = ()=>{
                     </div>
 
                     <div  id="playbuttonBackound" 
-                    className="drop-shadow-xl cursor-pointer rounded flex items-center justify-center md:w-1/2 md:h-[400px]">
+                    className="w-full drop-shadow-xl cursor-pointer rounded flex items-center justify-center md:w-1/2 md:h-[400px]">
                         {/* the play button */}
                         {/* <img src="" alt="" /> */}
                         <div className="shadow-2xl p-8 rounded-full">
@@ -83,16 +83,16 @@ const Features = ()=>{
             {/* end of content with video */}
 
 
-                <div className="py-4 bg-red">
                 <MiniNavWithDisPlay 
                 data={features}
                 />
-                </div>    
+                {/* <div className="py-4 ">
+                </div>     */}
 
 
-                <div className="flex flex-col gap-5 p-3 text-center md:flex-row md:gap-5 md:text-left items-center " >
+                <div className="my-12 flex flex-col gap-5 p-3 text-center md:flex-row md:gap-5 md:text-left items-center md:h-screen  lg:h-full"  >
                     <div className="md:w-1/2 ">
-                        <h2 className="font-semibold text-xl py-2 md:text-4xl ">
+                        <h2 className="font-semibold text-xl py-8 md:text-4xl ">
                             Thrive.App Academy  {"We're"} With You Every Step of the Way
                         </h2>
                         <p>
