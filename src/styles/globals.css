@@ -94,6 +94,16 @@ button:focus-visible {
   padding-left: 12px !important;
 }
 
+.competion_header{
+  background-image:
+  linear-gradient(to right,#8000ff, #8000ff3d,rgba(0, 0, 0, 0.623) ),
+  url("../../public/Illustrate2.png") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
