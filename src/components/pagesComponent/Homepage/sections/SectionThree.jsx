@@ -70,7 +70,28 @@ const SectionThree = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-[27px]">
-          {benefits.map((benefit, id) => (
+          {benefits.slice(0,4).map((benefit, id) => (
+            <div
+              key={id}
+              className="bg-white rounded-[20px] shadow-xl px-2.5 pt-[30px] pb-[55px] "
+            >
+              <div className="flex justify-center">
+                <div className="w-[72px] h-[72px] mb-[18px] rounded-full bg-[#EBEBEB] flex justify-center items-center">
+                  <img src={benefit.icon.src} alt="benefit" />
+                </div>
+              </div>
+              <p className="text-center font-medium text-[22px] mb-2">
+                {benefit.title}
+              </p>
+              <p className="text-center font-light text-lg leading-[25px]">
+                {benefit.content}{" "}
+              </p>
+            </div>
+          ))}
+        </div>
+          <br />
+        <div className="flex flex-col  gap-[27px] md:flex-row">
+        {benefits.slice(4,8).map((benefit, id) => (
             <div
               key={id}
               className="bg-white rounded-[20px] shadow-xl px-2.5 pt-[30px] pb-[55px] "
