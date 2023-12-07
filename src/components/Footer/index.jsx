@@ -51,7 +51,7 @@ const Footer = () => {
           <br /><br />
 
         </div>
-        <div className="flex justify-center md:block">
+        <div className="flex justify-center md:block translate-y-7 md:translate-y-9">
           <img src={Illustrate.src} alt="illustration of a girl" />
         </div>
       </div>
