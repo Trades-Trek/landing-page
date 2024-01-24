@@ -6,9 +6,24 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { cachedTime, getCompanyInfoApi } from "@/api/general.api";
 import { useQuery } from "react-query";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
-  const {data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,cachedTime)
+  const {data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,cachedTime);
+  const [formattedDate,setFormattedDate] = useState(null)
+// Create a new Date object
+useEffect(()=>{
+  const currentDate = new Date();
+
+  // Get the current date components
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth() + 1; // Note: Months are zero-based
+  const year = currentDate.getFullYear();
+  setFormattedDate(
+    year
+  )
+  
+},[])
 
   return (
     <div>
@@ -60,7 +75,7 @@ const Footer = () => {
           <div>
             <img src={Logo.src} alt="Logo" className="mb-5" />
             <p className="font-bold text-white">
-              © Copyright 2023 Trades Trek.
+              © Copyright {formattedDate} Trades Trek.
               <br />
               All rights reserved.
             </p>
