@@ -1,7 +1,7 @@
 import MetaComponent from "@/components/MetaComponent"
 import GeneralLaout from "@/layout/GeneralLaout"
 import { useState } from "react"
-import DummyImage from "../../public/Illustrate2.png"
+import DummyImage from "../../../public/Illustrate2.png"
 import { CustomModal } from "@/components/Modal"
 
 
