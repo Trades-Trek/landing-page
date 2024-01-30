@@ -97,7 +97,7 @@ const CompetitionsRules = ()=>{
                     <li>
                       <b>Prizes:</b>
                       <br />
-                      <table class="table-auto">
+                      <table className="table-auto">
                         <thead>
                           <tr>
                             <th>Position</th>
