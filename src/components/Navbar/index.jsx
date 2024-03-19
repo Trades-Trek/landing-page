@@ -180,7 +180,9 @@ const ResourcesDropdown =()=>{
           <li className="py-2">
       
 
- <Link href="https://blog.tradestrek.com"  target="_blank" className="text-lg font-light text-white">
+ <Link  onClick={() => {
+    window.open("https://blog.tradestrek.com")
+     }} href="https://blog.tradestrek.com"  target="_blank" className="text-lg font-light text-white">
             Blog
           </Link>
 
