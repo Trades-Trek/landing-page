@@ -39,7 +39,7 @@ useEffect(()=>{
           Download the Trades Trek Stock Trading Simulator App Today and Start Learning How to Trade Stocks Risk-Free! Win weekly and monthly cash prizes in our Trades Trek simulation trades competitions.
 
           </p>
-          <div className="flex flex-col items-center md:flex-row gap-y-4 gap-x-3">
+          <div id='download' className="flex flex-col items-center md:flex-row gap-y-4 gap-x-3">
             <a 
                           href={data?.ios_download_url??''}
              target="_blank" rel="noreferrer">
