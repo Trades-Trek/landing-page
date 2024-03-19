@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 // @ts-ignore
 import checkmark from '../assets/checkbox.svg'
 import { features } from 'process'
@@ -16,6 +16,7 @@ planFeatures:string[]
 }
 const PricingComponent = ({isMain=false,planName,planNameColor,planAmount,planYearType,planFeatures}:Prop)=>{
     const  {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,cachedTime)
+  const [isHovering, setIsHovering] = useState(false);
 
     return (
         <motion.div
@@ -24,6 +25,8 @@ const PricingComponent = ({isMain=false,planName,planNameColor,planAmount,planYe
         whileHover={{
         'scale':1.1
         }}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
         >
             <div className='pb-4'>
                 {/* heading */}
@@ -54,7 +57,11 @@ const PricingComponent = ({isMain=false,planName,planNameColor,planAmount,planYe
                 }
                 // data?.dynamic_link
             }}
-            className={`w-64 rounded-full mb-3  ${!isMain?'text-black border-[#8C1AFF] border-2 bg-white':'bg-[#8C1AFF] text-white'}`}>  
+           className={`w-64 rounded-full mb-3  ${
+          isHovering
+            ? "bg-[#8C1AFF] text-white"
+            : "text-black border-[#8C1AFF] border-2 bg-white"
+        }`}>  
                 Get Started
             </button>
             {/* <p className='text-[#0D0D0D] font-semibold'>It{"’"}s free so why not</p> */}
