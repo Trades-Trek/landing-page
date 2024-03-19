@@ -158,11 +158,9 @@ const SectionFour = () => {
            planYearType={'Free'}
            planNameColor='1st'
            planFeatures={[
-            'Virtual cash',
-            'Two simulated trades monthly',
-            'Refer and earn',
-            'Create competition',
-            'Leader board reward'
+             'Virtual cash',
+              'Two simulated trades monthly',
+              'Refer and earn',
            ]}
             />
             <PricingComponent isMain
@@ -171,11 +169,10 @@ const SectionFour = () => {
             planAmount={'5,400'}
             planYearType={'Annually 10% Discount'}
             planFeatures={[
-             'Virtual cash',
-             'Unlimited Simulated Trades',
-             'Refer and earn',
-             'Create competition',
-             'Leader board reward '
+               'Virtual cash',
+               'Unlimited Simulated Trades',
+               'Refer and earn',
+               'Create competition',
             ]}
             
             />
@@ -185,11 +182,11 @@ const SectionFour = () => {
             planAmount={'10,800'}
             planYearType={'Annually 10% Discount'}
             planFeatures={[
-             'Virtual cash',
-             'Unlimited Simulated Trades',
-             'Refer and earn',
-             'Create competition',
-             'Leader board reward'
+               'Virtual cash',
+               'Unlimited Simulated Trades',
+               'Refer and earn',
+               'Create competition',
+               'Leader board reward',
             ]}
             />
           </div>
