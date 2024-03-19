@@ -1,7 +1,6 @@
 import MetaComponent from "@/components/MetaComponent"
 import GeneralLaout from "@/layout/GeneralLaout"
 import { useState } from "react"
-import DummyImage from "../../../public/Illustrate2.png"
 import { CustomModal } from "@/components/Modal"
 
 const Competitions = ()=>{
@@ -141,8 +140,8 @@ const CompetitionCard =()=>{
 
 
 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-        <img className="rounded-t-lg" src={DummyImage.src} alt="" />
+    <a href="#"> 
+        <img className="rounded-t-lg"  src={`/Illustrate2.png`} alt="" />
     </a>
     <div className="p-5">
         <a href="#">
@@ -171,7 +170,7 @@ const CompetitionDetail =() =>{
             </div> */}
            <div className="md:flex items-start gap-5 ">
             <div className=" md:w-1/2 md:h-[400px] md:object-cover" >
-           <img className="rounded md:h-full" src={DummyImage.src} alt=""  />
+           <img className="rounded md:h-full" src={`/Illustrate2.png`} alt=""  />
 
             </div>
             <div className="py-4 md:w-1/2">
