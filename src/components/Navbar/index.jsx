@@ -178,14 +178,12 @@ const ResourcesDropdown =()=>{
       <div className={`bg-[#7f00ff] absolute  px-5 text-center rounded  ${resourceDropdown?'block':'hidden'}`}>
         <ul>
           <li className="py-2">
-        <a
-          href="https://blog.tradestrek.com"
-          target="_blank"
-          rel="noreferrer"
-          className="text-lg font-light text-white"
-        >
-          Blog
-        </a>
+      
+
+ <Link href="https://blog.tradestrek.com"  target="_blank" className="text-lg font-light text-white">
+            Blog
+          </Link>
+
       </li >
         <li className="py-2">
           <Link href="/join-community" className="text-lg font-light text-white">
