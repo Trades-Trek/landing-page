@@ -79,7 +79,7 @@ const SectionSix = () => {
         )).slice(0,3)}
       </div>
       <div className="flex justify-center mt-[33px]">
-        <button onClick={()=>router.go("/faq")} className="text-white font-bold border-none h-14 px-8 rounded-[15px] bg-palette-two">
+        <button onClick={()=>router.push("/faq")} className="text-white font-bold border-none h-14 px-8 rounded-[15px] bg-palette-two">
           View All Questions
         </button>
       </div>
