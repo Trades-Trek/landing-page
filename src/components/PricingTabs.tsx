@@ -25,7 +25,7 @@ const PricingTabs = ({billedQuaterly=<div></div>,billedYearly=<div></div>}:Prop)
             style={{'outline':'none'}}
 
           >
-           Billed yearly
+           Billed monthly
           </Tabs.Trigger>
           {/* data-[state=active]:shadow-current 
              data-[state=active]:focus:relative data-[state=active]:focus:shadow-[0_0_0_2px] */}
@@ -38,7 +38,7 @@ const PricingTabs = ({billedQuaterly=<div></div>,billedYearly=<div></div>}:Prop)
             value="tab2"
             style={{'outline':'none'}}
           >
-           Billed Quarterly
+           Billed yearly
           </Tabs.Trigger>
         </Tabs.List>
         <Tabs.Content
