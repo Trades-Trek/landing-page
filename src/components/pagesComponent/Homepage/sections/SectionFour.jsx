@@ -120,8 +120,6 @@ const SectionFour = () => {
               'Virtual cash',
               'Two simulated trades monthly',
               'Refer and earn',
-              'Create competition',
-              'Leader board reward'
              ]}
               />
               <PricingComponent isMain
@@ -134,21 +132,20 @@ const SectionFour = () => {
                'Unlimited Simulated Trades',
                'Refer and earn',
                'Create competition',
-               'Leader board reward '
               ]}
               
               />
               <PricingComponent
               planNameColor={'3rd'}
               planName={'Premium'}
-              planAmount={'3,800'}
+              planAmount={'1,000'}
               planYearType={'Quarterly'}
               planFeatures={[
                'Virtual cash',
                'Unlimited Simulated Trades',
                'Refer and earn',
-               'Simulation tool',
-               'Create competition'
+               'Create competition',
+               'Leader board reward',
               ]}
               />
             </div>
