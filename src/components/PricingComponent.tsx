@@ -1,4 +1,4 @@
-
+import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 // @ts-ignore
 import checkmark from '../assets/checkbox.svg'
@@ -17,7 +17,7 @@ planFeatures:string[]
 const PricingComponent = ({isMain=false,planName,planNameColor,planAmount,planYearType,planFeatures}:Prop)=>{
     const  {isLoading,data} = useQuery('getCompanyInfoApi',getCompanyInfoApi,cachedTime)
   const [isHovering, setIsHovering] = useState(false);
-
+  const router = useRouter();
     return (
         <motion.div
         className={`bg-white text-center w-80 md:w-45 py-16  rounded-lg md:rounded-2xl ${isMain?'py-32  border-4 border-[rbga(140, 26, 255, 0.15)]':' shadow-md'} `}
@@ -52,10 +52,7 @@ const PricingComponent = ({isMain=false,planName,planNameColor,planAmount,planYe
 
             <button style={{'outline':'none'}} 
             onClick={e=>{
-                if(data?.dynamic_link){
-                    window.open(data.dynamic_link,'_blank')
-                }
-                // data?.dynamic_link
+                router.push('/#download')
             }}
            className={`w-64 rounded-full mb-3  ${
           isHovering
