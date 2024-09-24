@@ -76,10 +76,18 @@ const pricing = [
       },
       {
         feature: "Refer and earn",
-        valid: true,
+        valid: false,
       },
       {
         feature: "Create competition",
+        valid: true,
+      },
+      {
+        feature: "Leader board reward ",
+        valid: true,
+      },
+      {
+        feature: "Leader board reward ",
         valid: true,
       },
       {
@@ -145,7 +153,8 @@ const SectionFour = () => {
                'Unlimited Simulated Trades',
                'Refer and earn',
                'Create competition',
-               'Leader board reward',
+               'Set Price Alert',
+               'View Other Users Portfolio'
               ]}
               />
             </div>
