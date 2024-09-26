@@ -130,7 +130,7 @@ const SectionFour = () => {
               'Refer and earn',
              ]}
               />
-              <PricingComponent isMain
+              <PricingComponent 
               planNameColor='2nd'
               planName={'Standard'}
               planAmount={'500'}
@@ -144,17 +144,18 @@ const SectionFour = () => {
               
               />
               <PricingComponent
+              isMain
               planNameColor={'3rd'}
               planName={'Premium'}
               planAmount={'1,000'}
-              planYearType={'Quarterly'}
+              planYearType={'Monthly'}
               planFeatures={[
                'Virtual cash',
                'Unlimited Simulated Trades',
                'Refer and earn',
                'Create competition',
                'Set Price Alert',
-               'View Other Users Portfolio'
+               "View Other User's Portfolio"
               ]}
               />
             </div>
