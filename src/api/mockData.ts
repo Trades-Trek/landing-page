@@ -21,7 +21,7 @@ export const mockCompanyInfo = {
   site_description: "Learn to trade stocks and invest smartly with TradesTrek - your pocket-sized investment adventure.",
   mission_statement: "To democratize financial education and empower everyone to become successful traders and investors.",
   vision_statement: "To be the leading platform for financial literacy and investment education in Africa.",
-  home_page_banner: "https://tradestrek.salitastech.com/images/home-banner.jpg"
+  home_page_banner: ""
 };
 
 export const mockAboutUs = {
@@ -29,7 +29,7 @@ export const mockAboutUs = {
   subtitle: "At Trades Trek, we believe that financial success should be within everyone's reach.",
   content: "We're dedicated to providing you with the knowledge and tools you need to navigate the world of investments and build wealth. Our mission is to demystify the stock market and make trading accessible to everyone, regardless of their experience level.",
   images: {
-    banner: "https://tradestrek.salitastech.com/images/about-banner.jpg"
+    banner: ""
   }
 };
 
@@ -38,7 +38,7 @@ export const mockFaqContent = {
   subtitle: "Find answers to common questions about TradesTrek",
   content: "Get insights into how our platform works, our services, and how we can help you achieve your investment goals.",
   images: {
-    banner: "https://tradestrek.salitastech.com/images/faq-banner.jpg"
+    banner: ""
   }
 };
 
@@ -56,7 +56,7 @@ export const mockContactPageContent = {
   subtitle: "We'd love to hear from you",
   content: "Have questions or feedback? Contact our team and we'll get back to you as soon as possible.",
   images: {
-    banner: "https://tradestrek.salitastech.com/images/contact-banner.jpg"
+    banner: ""
   }
 };
 
