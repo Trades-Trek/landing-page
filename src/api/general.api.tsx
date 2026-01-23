@@ -3,6 +3,18 @@ import {WaitListI} from '@/components/pagesComponent/JoinWaitList/JoinWaitList'
 import { handlError } from '../utils/extraFunc'
 import api from './axios'
 import toast from "react-hot-toast"
+import { 
+  mockCompanyInfo, 
+  mockAboutUs, 
+  mockFaqContent, 
+  mockCommunityPageContent, 
+  mockContactPageContent,
+  mockFaqs, 
+  mockKeyFeatures, 
+  mockPricing, 
+  mockTestimonials, 
+  mockPages 
+} from './mockData'
 
 type SuccessResponse ={
     status:string,
@@ -19,26 +31,21 @@ export const GenegralResponseAndError = {
 }
 export const cachedTime = {cacheTime:10000 * 600 * 50}
 export const communitySignUpApi = async(data:WaitListI):Promise<SuccessResponse>=>{
-    const form = new FormData()
-    form.append('first_name',data.first_name)
-    form.append('last_name',data.last_name)
-    form.append('birth_year',data.birth_year.toString())
-    form.append('email',data.email)
-    form.append('phone_number',data.phone_number.toString())
-    const resp = await api.post('/community-sign-up',form)
-    return resp.data
+  // Mock implementation - simulates successful signup
+  return {
+    status: 'success',
+    message: `Welcome ${data.first_name}! You've been added to our waitlist.`,
+    data: { id: Math.random() }
+  }
 }
 
 export const submitContactApi = async (data:ContactI)=>{
-    const form = new FormData()
-    form.append('first_name',data.first_name)
-    form.append('last_name',data.last_name)
-    form.append('subject',data.subject)
-    form.append('message',data.message)
-    form.append('email',data.email)
-    form.append('phone',data.phone)
-  const resp = await api.post('/contact',form)
-  return resp.data
+  // Mock implementation - simulates successful form submission
+  return {
+    status: 'success',
+    message: `Thank you ${data.first_name}! We've received your message and will get back to you soon.`,
+    data: { id: Math.random() }
+  }
 }
 
 export type FaqI = {
@@ -48,10 +55,12 @@ export type FaqI = {
 
 }
 export const getFaqApi = async ({query=''}:{query?:string}):Promise<FaqI[]>=>{
-  // let query = 
-
-  const resp = await api.get(`faq${query}`)
-  return resp.data.data
+  // Mock data implementation - filters FAQs by subject if query parameter contains subject
+  if (query && query.includes('subject=')) {
+    const subject = query.split('subject=')[1]
+    return mockFaqs.filter(faq => faq.subject.toLowerCase() === subject.toLowerCase())
+  }
+  return mockFaqs
 }
 
 
@@ -62,10 +71,7 @@ type KeyFeature ={
 }
 
 export const getKeyFeatureApi = async():Promise<KeyFeature[]>=>{
-  
-
-  const resp = await api.get(`/features`)
-  return resp.data.data
+  return mockKeyFeatures
 }
 
 
@@ -82,9 +88,7 @@ export type Pricing ={
   }
 }
 export const getPricing = async ():Promise<Pricing[]>=>{
-
-    const resp = await api.get('/plans')
-    return resp.data.data
+  return mockPricing
 }
 
 export type TestimonialI = {
@@ -98,19 +102,19 @@ export type TestimonialI = {
   "image": string
 }
 export const getTestimonials = async ():Promise<TestimonialI[]>=>{
-
-  const resp = await api.get('/testimonials')
-  return resp.data.data
+  return mockTestimonials
 }
 
 
 
 
 export const joinNewsLetterApi = async ({email}:{email:string})=>{
-  const form = new FormData()
-  form.append('email',email)
-  const resp = await api.post('/subscribe',form)
-  return resp.data
+  // Mock implementation - simulates successful newsletter signup
+  return {
+    status: 'success',
+    message: 'Successfully subscribed to our newsletter!',
+    data: { email }
+  }
 }
 
 type CompanyInfoI = {
@@ -137,10 +141,7 @@ type CompanyInfoI = {
   'home_page_banner':string
 }
 export const getCompanyInfoApi = async ():Promise<CompanyInfoI>=>{
-
-
-  const resp = await api.get('/company-information',)
-  return resp.data.data
+  return mockCompanyInfo
 }
 
 //get pages content
@@ -153,8 +154,7 @@ type AboutUsI ={
   },
 }
 export const getAboutUs = async():Promise<AboutUsI>=>{
-  const resp = await api.get('/page/about-us',)
-  return resp.data.data 
+  return mockAboutUs
 }
 
 
@@ -166,22 +166,17 @@ type FaqContentI = {
         "images": {"banner": string}
 }
 export const getFaqContent =  async ():Promise<FaqContentI>=>{
-  const resp = await api.get('/page/faq',)
-  return resp.data.data 
+  return mockFaqContent
 }
 
 
 
 export const getCommunityPage = async():Promise<FaqContentI>=>{
-  const resp = await api.get('/page/join-community',)
-  return resp.data.data 
-
+  return mockCommunityPageContent
 }
 
 export const getContactPage =  async():Promise<FaqContentI>=>{
-  const resp = await api.get('/page/contact',)
-  return resp.data.data 
-
+  return mockContactPageContent
 }
 
 
@@ -197,7 +192,5 @@ type PageResponseI ={
 }
 
 export const getPageApi =  async({page}:{page: 'home'|'about-us'|'join-community'|'contact-us'|'faq'}):Promise<PageResponseI>=>{
-  const resp = await api.get(`/page/${page}`,)
-  return resp.data.data 
-
+  return mockPages[page as keyof typeof mockPages]
 }
