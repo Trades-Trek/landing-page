@@ -47,7 +47,7 @@ export const mockCommunityPageContent = {
   subtitle: "Be part of the TradesTrek family",
   content: "Connect with like-minded traders and investors. Share experiences, learn from others, and grow together.",
   images: {
-    banner: "https://tradestrek.salitastech.com/images/community-banner.jpg"
+    banner: ""
   }
 };
 
@@ -261,7 +261,7 @@ export const mockPages = {
     content: "Browse our FAQ section to find answers to common questions about TradesTrek.",
     meta_description: "TradesTrek FAQ - Find answers to common questions about our platform and services.",
     images: {
-      banner: "https://tradestrek.salitastech.com/images/faq-banner.jpg"
+      banner: ""
     }
   }
 };
