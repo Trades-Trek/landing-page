@@ -8,10 +8,12 @@ import {
   QueryClientProvider,
 } from 'react-query'
 import NextNProgress from 'nextjs-progressbar';
+import ComingSoon from '@/components/ComingSoon';
 
 
 
 const queryClient = new QueryClient()
+const comingSoon = process.env.NEXT_PUBLIC_COMING_SOON === 'true'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -20,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <NextNProgress color='#7f00ff' />
         <Toaster/>    
 
-          <Component {...pageProps} />
+          {comingSoon ? <ComingSoon /> : <Component {...pageProps} />}
     </QueryClientProvider>
   )
 }
