@@ -13,7 +13,7 @@ import ComingSoon from '@/components/ComingSoon';
 
 
 const queryClient = new QueryClient()
-const comingSoon = process.env.NEXT_PUBLIC_COMING_SOON === 'true'
+const comingSoon = process.env.NEXT_PUBLIC_COMING_SOON !== 'false'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
